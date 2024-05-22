@@ -1,8 +1,7 @@
-package Simulation;
+package Model.Simulation;
 
 import java.util.Random;
-
-import Products.*;
+import Model.Simulation.Products.*;
 
 public class Market 
 {

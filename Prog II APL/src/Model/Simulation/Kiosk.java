@@ -1,8 +1,8 @@
-package Simulation;
+package Model.Simulation;
 
-import Products.*;
 import java.util.ArrayList;
 import java.util.List;
+import Model.Simulation.Products.*;
 
 public class Kiosk 
 {

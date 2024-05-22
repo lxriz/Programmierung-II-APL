@@ -11,7 +11,7 @@ public class ControllerHighscoreMenu extends Controller
 	
 	 
 	@Override
-	public void getInput(int input)
+	public void setInput(int input)
 	{
 		vm.setInput(input);;
 	}

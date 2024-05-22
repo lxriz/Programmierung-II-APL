@@ -3,6 +3,6 @@ package Controller;
 public interface InterfaceController 
 {
 
-	public void getInput(int input);
+	public void setInput(int input);
 	
 }

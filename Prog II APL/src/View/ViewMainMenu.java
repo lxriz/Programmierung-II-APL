@@ -53,7 +53,7 @@ public class ViewMainMenu extends View
 		
 		if(input >= 0 && input <= 3)
 		{
-			controller.getInput(input);
+			controller.setInput(input);
 		}
 		else
 		{

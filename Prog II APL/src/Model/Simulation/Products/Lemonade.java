@@ -1,4 +1,4 @@
-package Products;
+package Model.Simulation.Products;
 
 public class Lemonade extends Product
 {	

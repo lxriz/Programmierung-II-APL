@@ -2,12 +2,15 @@ package Controller;
 
 import View.*;
 import Model.*;
+import Model.Simulation.Simulation;
 
 
 public class ViewManager 
 {
 	public Controller controller;
 	public View view;
+	
+	private Simulation sim;
 	
 	private int input;
 	
@@ -16,7 +19,8 @@ public class ViewManager
 	{
 		MainMenu,
 		LanguageMenu,
-		HighscoreMenu
+		HighscoreMenu,
+		EnterUsernameMenu
 		
 	}
 	
@@ -54,6 +58,10 @@ public class ViewManager
 						break;
 					case 1:
 						// Starts Game
+						currentView = ViewName.EnterUsernameMenu;
+						this.controller = new ControllerEnterUsernameMenu(this, trans);
+						this.view = new ViewEnterUsernameMenu(controller);
+						run();
 						break;
 					case 2:
 						// Language Menu
@@ -109,6 +117,12 @@ public class ViewManager
 	public void setInput(int input)
 	{
 		this.input = input;
+	}
+	
+	
+	public void setSimulation(Simulation sim)
+	{
+		this.sim = sim;
 	}
 	
 	

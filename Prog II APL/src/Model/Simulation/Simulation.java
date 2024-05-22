@@ -1,8 +1,7 @@
-package Simulation;
+package Model.Simulation;
 
 import java.util.Random;
-import org.json.simple.parser.*;
-import org.json.simple.JSONObject;
+
 
 public class Simulation 
 {

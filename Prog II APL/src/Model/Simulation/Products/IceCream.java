@@ -1,4 +1,4 @@
-package Products;
+package Model.Simulation.Products;
 
 public class IceCream extends Product
 {

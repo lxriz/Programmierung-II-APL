@@ -59,7 +59,7 @@ public class ViewLanguageMenu extends View
 		
 		if(input >= 0 && input <= ((ControllerLanguageMenu) controller).getSupportedLanguages().length)
 		{
-			controller.getInput(input);
+			controller.setInput(input);
 		}
 		else
 		{
