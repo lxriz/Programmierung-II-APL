@@ -1,4 +1,4 @@
-package Model.Simulation.Products;
+package Products;
 
 public class Gum extends Product
 {

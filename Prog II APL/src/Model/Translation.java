@@ -17,7 +17,7 @@ public final class Translation
 	
 	
 	// ACHTUNG NOCH NICHT DYNAMISCH !!!
-	private static final String path = "/Users/loris/Java/Ecplise/Prog II APL/src/Model/translation.json";
+	private static final String path = "/Users/loris/git/Prog II APL/Prog II APL/src/Model/translation.json";
 	
 	
 	
