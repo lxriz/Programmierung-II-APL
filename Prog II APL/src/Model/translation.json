@@ -1,0 +1,477 @@
+{
+  "PROG_NAME": 
+  {
+    "DE": "Kiosk Spiel",
+    "ENG": "Kiosk Game"
+  },
+  
+  "PRODUCT_NAME_NEWSPAPER":
+  {
+    "DE": "Zeitung",
+    "ENG": "Newspaper"
+  },
+  
+  "PRODUCT_NAME_CIGARETTES":
+  {
+    "DE": "Zigaretten",
+    "ENG": "Cigarettes"
+  },
+  
+  "PRODUCT_NAME_FRIES":
+  {
+    "DE": "Pommes",
+    "ENG": "Fries"
+  }, 
+  
+  "PRODUCT_NAME_LEMONADE":
+  {
+    "DE": "Limonade",
+    "ENG": "Lemonade"
+  },
+  
+  "PRODUCT_NAME_ICE_CREAM":
+  {
+    "DE": "Eiscreme",
+    "ENG": "Ice cream"
+  },
+  
+  "PRODUCT_NAME_GUM":
+  {
+    "DE": "Kaugummi",
+    "ENG": "Chewing Gum"
+  },
+  
+  "START_SCREEN":
+  {
+  	"DE": "von Loris Kulke",
+  	"ENG": "by Loris Kulke"
+  },
+  
+  "MAIN_MENU":
+  {
+  	"DE": "Hauptmenü",
+  	"ENG": "Main menu"
+  },
+  
+  "MAIN_MENU_CHANGE_LANGUAGE":
+  {
+  	"DE": "Sprache wechseln",
+	"ENG": "Change language"
+  },
+  
+  "MAIN_MENU_EXIT":
+  {
+  	"DE": "Verlassen",
+	"ENG": "Exit"
+  },
+  
+  "MAIN_MENU_START":
+  {
+  	"DE": "Neues Spiel",
+	"ENG": "New game"
+  },
+  
+  "MAIN_MENU_SEE_SCORE":
+  {
+  	"DE": "Bestenliste",
+	"ENG": "Highscores"
+  },
+  
+  "INVALID_INPUT":
+  {
+  	"DE": "Ungültige Eingabe",
+	"ENG": "Invalid input"
+  },
+  
+  "INPUT":
+  {
+  	"DE": "Eingabe",
+	"ENG": "Input"
+  },
+  
+  "HIGHSCORES_MENU":
+  {
+  	"DE": "Bestenliste",
+	"ENG": "Highscores"
+  },
+  
+  "LANGUAGE_MENU":
+  {
+  	"DE": "Sprache ändern",
+	"ENG": "Change language"
+  },
+  
+  "LANGUAGE_MENU_EXIT":
+  {
+  	"DE": "Zurück",
+	"ENG": "Back"
+  },
+  
+   "HIGHSCORE_MENU":
+  {
+  	"DE": "Bestenliste",
+	"ENG": "Highscores"
+  },
+  
+   "HIGHSCORE_MENU_EXIT":
+  {
+  	"DE": "Zurück",
+	"ENG": "Back"
+  },
+  
+  "SIMULATION_ENTER_NAME_MENU":
+  {
+  	"DE": "Wie heißt du?",
+	"ENG": "What's your name?"
+  },
+  
+  "SIMULATION_HEADER_MONEY":
+  {
+  	"DE": "Kasse",
+	"ENG": "Cash"
+  },
+  
+  "SIMULATION_HEADER_STORAGE_1":
+  {
+  	"DE": "Lager",
+	"ENG": "Storage"
+  },
+  
+  "SIMULATION_HEADER_STORAGE_2":
+  {
+  	"DE": "von",
+	"ENG": "out of"
+  },
+  
+  "SIMULATION_HEADER_STORAGE_3":
+  {
+  	"DE": "Plätze belegt",
+	"ENG": "spaces taken"
+  },
+  
+  "SIMULATION_HEADER_WEATHER_1":
+  {
+  	"DE": "Tag",
+	"ENG": "Day"
+  },
+  
+  "SIMULATION_HEADER_WEATHER_2":
+  {
+  	"DE": "von",
+	"ENG": "out of"
+  },
+  
+  "SIMULATION_MENU_START_DAY":
+  {
+  	"DE": "Tag beginnen",
+	"ENG": "Start day"
+  }, 
+  
+  "SIMULATION_MENU_STORAGE":
+  {
+  	"DE": "Lager einsehen",
+	"ENG": "View storage"
+  }, 
+  
+  "SIMULATION_MENU_PRICES":
+  {
+  	"DE": "Preise ändern",
+	"ENG": "Change prices"
+  }, 
+  
+  "SIMULATION_MENU_GET_PRODUCTS":
+  {
+  	"DE": "Waren bestellen",
+	"ENG": "Order goods"
+  }, 
+  
+  "SIMULATION_MENU_END_GAME":
+  {
+  	"DE": "Kiosk schließen",
+	"ENG": "Close kiosk"
+  }, 
+  
+  "SIMULATION_MENU_END_GAME_VERIFY":
+  {
+  	"DE": "Wills du wirklich deinen Kiosk schließen? Das Spiel endet damit!",
+	"ENG": "Do you really want to close the kiosk? The game ends with this!"
+  }, 
+  
+  "SIMULATION_MENU_END_GAME_VERIFY_LEAVE":
+  {
+  	"DE": "Gehen",
+	"ENG": "Leave"
+  }, 
+  
+  "SIMULATION_MENU_END_GAME_VERIFY_STAY":
+  {
+  	"DE": "Bleiben",
+	"ENG": "Stay"
+  }, 
+  
+  "SIMULATION_PRICES_MENU":
+  {
+  	"DE": "Preise anpassen",
+	"ENG": "Change prices"
+  }, 
+  
+  "SIMULATION_PRICES_MENU_BACK":
+  {
+  	"DE": "Zurück",
+	"ENG": "Back"
+  }, 
+  
+  "SIMULATION_PRICES_MENU_QUESTION":
+  {
+  	"DE": "Was ist der neue Preis?",
+	"ENG": "What is the new price?"
+  }, 
+  
+  "SIMULATION_PRICE_MENU_ERROR_PRICE":
+  {
+  	"DE": "Ungültiger Preis!",
+	"ENG": "Invalid price!"
+  }, 
+  
+  "SIMULATION_STORAGE_MENU":
+  {
+  	"DE": "Lager",
+	"ENG": "Storage"
+  }, 
+  
+  "SIMULATION_STORAGE_MENU_HEADER":
+  {
+  	"DE": "Name",
+	"ENG": "Name"
+  }, 
+  
+  "SIMULATION_STORAGE_MENU_SIZE":
+  {
+  	"DE": "Größe",
+	"ENG": "Size"
+  }, 
+  
+  "SIMULATION_STORAGE_MENU_EXPIRES":
+  {
+  	"DE": "Haltbarkeit",
+	"ENG": "Shelf life"
+  }, 
+  
+  "SIMULATION_STORAGE_MENU_BUY_PRICE":
+  {
+  	"DE": "Einkaufspreis",
+	"ENG": "Buy price"
+  }, 
+  
+  "SIMULATION_STORAGE_MENU_DAY":
+  {
+  	"DE": "Tage",
+	"ENG": "Days"
+  }, 
+  
+  "SIMULATION_STORAGE_MENU_SORT_NAME":
+  {
+  	"DE": "Nach Name sortieren",
+	"ENG": "Sort by name"
+  }, 
+  
+  "SIMULATION_STORAGE_MENU_SORT_EXPIRES":
+  {
+  	"DE": "Nach Verfallsdatum sortieren",
+	"ENG": "Sort by shelf life"
+  }, 
+  
+  "SIMULATION_STORAGE_MENU_BACK":
+  {
+  	"DE": "Zurück",
+	"ENG": "Back"
+  }, 
+  
+  "SIMULATION_MARKET_MENU":
+  {
+  	"DE": "Markt",
+	"ENG": "Market"
+  }, 
+  
+  "SIMULATION_MARKET_MENU_HEADER_NAME":
+  {
+  	"DE": "Name",
+	"ENG": "Name"
+  }, 
+  
+  "SIMULATION_MARKET_MENU_HEADER_SIZE":
+  {
+  	"DE": "Größe",
+	"ENG": "Size"
+  }, 
+  
+  "SIMULATION_MARKET_MENU_HEADER_EXPIRES":
+  {
+  	"DE": "Haltbarkeit",
+	"ENG": "Shelf life"
+  }, 
+  
+  "SIMULATION_MARKET_MENU_HEADER_PRICE":
+  {
+  	"DE": "Preis",
+	"ENG": "Price"
+  }, 
+  
+  "SIMULATION_MARKET_MENU_DAYS":
+  {
+  	"DE": "Tage",
+	"ENG": "Days"
+  }, 
+  
+  "SIMULATION_MARKET_MENU_BACK":
+  {
+  	"DE": "Zurück",
+	"ENG": "Back"
+  }, 
+  
+  "SIMULATION_MARKET_MENU_QUESTION":
+  {
+  	"DE": "Was willst du kaufen?",
+	"ENG": "What do you want to buy?"
+  }, 
+  
+  "SIMULATION_MARKET_MENU_QUESTION_2":
+  {
+  	"DE": "Wie viel willst du kaufen?",
+	"ENG": "How much do you want to buy?"
+  }, 
+  
+  "SIMULATION_MARKET_MENU_ERROR_CASH":
+  {
+  	"DE": "Du hast nicht genug Geld!",
+	"ENG": "You don't have enough money!"
+  }, 
+  
+  "SIMULATION_MARKET_MENU_ERROR_STORAGE":
+  {
+  	"DE": "Das würde die Lagerkapazität überschriten!",
+	"ENG": "This would exceed your storage capacity!"
+  }, 
+  
+   "SIMULATION_START_DAY_CUSTOMER_RESPONSE_SOLD_OUT":
+  {
+  	"DE": "Ausverkauft!",
+	"ENG": "Sold out!"
+  }, 
+  
+   "SIMULATION_START_DAY_CUSTOMER_RESPONSE_TOO_EXPENSIVE":
+  {
+  	"DE": "Das ist zu teuer!",
+	"ENG": "This is too expensive!"
+  }, 
+  
+   "SIMULATION_START_DAY_CUSTOMER_RESPONSE_BOUGHT":
+  {
+  	"DE": "Gekauft!",
+	"ENG": "Sold!"
+  }, 
+  
+  "SIMULATION_START_DAY_CUSTOMER":
+  {
+  	"DE": "Kunde",
+	"ENG": "Customer"
+  }, 
+  
+  "SIMULATION_END_GAME_GAME_OVER":
+  {
+  	"DE": "Spielende",
+	"ENG": "Game Over"
+  }, 
+  
+  "SIMULATION_END_GAME_PROFIT":
+  {
+  	"DE": "Gewinn",
+	"ENG": "Profit"
+  }, 
+  
+  "SIMULATION_END_GAME_PROFIT_PER_DAY":
+  {
+  	"DE": "Gewinn pro Tag",
+	"ENG": "Profit per day"
+  }, 
+  
+  "SIMULATION_END_GAME_SAVE_HIGHSCORE":
+  {
+  	"DE": "Punktestand speichern?",
+	"ENG": "Save score?"
+  }, 
+  
+  "SIMULATION_END_GAME_SAVE_HIGHSCORE_YES":
+  {
+  	"DE": "Ja",
+	"ENG": "Yes"
+  }, 
+  
+  "SIMULATION_END_GAME_SAVE_HIGHSCORE_NO":
+  {
+  	"DE": "Nein",
+	"ENG": "No"
+  }, 
+  
+  "DAY_1":
+  {
+  	"DE": "Montag",
+	"ENG": "Monday"
+  },
+  
+  "DAY_2":
+  {
+  	"DE": "Dienstag",
+	"ENG": "Tuesday"
+  },
+  
+  "DAY_3":
+  {
+  	"DE": "Mittwoch",
+	"ENG": "Wednesday"
+  },
+  
+  "DAY_4":
+  {
+  	"DE": "Donnerstag",
+	"ENG": "Thursday"
+  },
+  
+  "DAY_5":
+  {
+  	"DE": "Freitag",
+	"ENG": "Friday"
+  },
+  
+  "DAY_6":
+  {
+  	"DE": "Samstag",
+	"ENG": "Saturday"
+  },
+  
+  "DAY_7":
+  {
+  	"DE": "Sonntag",
+	"ENG": "Sunday"
+  },
+ 
+ "WEATHER_RAINY":
+  {
+  	"DE": "Es regnet...",
+	"ENG": "It is raining..."
+  },
+ 
+ "WEATHER_CLOUDY":
+  {
+  	"DE": "Es ist bewölkt...",
+	"ENG": "It is cloudy..."
+  },
+  
+  "WEATHER_SUNNY":
+  {
+  	"DE": "Es ist sonnig...",
+	"ENG": "It is sunny..."
+  }
+ 
+  
+}
