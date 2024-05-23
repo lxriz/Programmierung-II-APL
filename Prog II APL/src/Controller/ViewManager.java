@@ -22,7 +22,8 @@ public class ViewManager
 		HighscoreMenu,
 		EnterUsernameMenu,
 		SimulationMenu,
-		SimulationPriceMenu
+		SimulationPriceMenu,
+		SimulationMarketMenu
 		
 	}
 	
@@ -149,6 +150,10 @@ public class ViewManager
 						break;
 						
 					case 4:
+						currentView = ViewName.SimulationMarketMenu;
+						this.controller = new ControllerSimulationMarketMenu(this, trans, this.sim);
+						this.view = new ViewSimulationMarketMenu(controller);
+						run();
 						break;
 				}
 				break;
@@ -156,12 +161,30 @@ public class ViewManager
 			case SimulationPriceMenu:
 				switch(input)
 				{
+					case -1:
+						run();
+						break;
 					case 0:
 						currentView = ViewName.SimulationMenu;
 						this.controller = new ControllerSimulationMenu(this, trans, sim);
 						this.view = new ViewSimulationMenu(controller);
 						run();
 						break;
+				}
+				break;
+			
+			case SimulationMarketMenu:
+				switch(input)
+				{
+				case -1:
+					run();
+					break;
+				case 0:
+					currentView = ViewName.SimulationMenu;
+					this.controller = new ControllerSimulationMenu(this, trans, sim);
+					this.view = new ViewSimulationMenu(controller);
+					run();
+					break;
 				}
 				break;
 		}

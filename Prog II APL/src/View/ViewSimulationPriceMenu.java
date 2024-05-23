@@ -18,7 +18,7 @@ public class ViewSimulationPriceMenu extends View
 	}
 	
 	
-	public void PrintSimulationAnimation(int weather)
+	private void PrintSimulationAnimation(int weather)
 	{
 		switch(weather)
 		{
@@ -54,7 +54,7 @@ public class ViewSimulationPriceMenu extends View
 	}
 	
 	
-	public void PrintSimulationHeader()
+	private void PrintSimulationHeader()
 	{			
 		String weekday = "";
 		String weatherText = "";
@@ -158,6 +158,30 @@ public class ViewSimulationPriceMenu extends View
 	}
 	
 	
+	private void printChangePrice()
+	{
+		PrintLineDashed();
+		System.out.println(" " + controller.getTrans("SIMULATION_PRICES_MENU_QUESTION"));
+	}
+	
+	
+	private void PrintPriceError()
+	{
+		PrintLineDotted();
+		System.out.println(" " + controller.getTrans("SIMULATION_PRICE_MENU_ERROR_PRICE"));
+		PrintLineDotted();
+		
+		try
+		{
+			Thread.sleep(800);
+		}
+		catch(Exception e)
+		{
+			
+		}
+	}
+	
+	
 	
 	@Override 
 	public void getInput()
@@ -176,10 +200,34 @@ public class ViewSimulationPriceMenu extends View
 		}
 		
 		
-		
-		if(input >= 0 && input <= 6)
+		if(input == 0)
 		{
 			controller.setInput(input);
+		}
+		else if(input >= 1 && input <= 6)
+		{	
+			double newPrice = -1;
+			try
+			{	
+				printChangePrice();
+				newPrice = scan.nextDouble();
+			}
+			catch(Exception e)
+			{
+				scan.nextLine();
+			}
+			
+			
+			if(newPrice < 0)
+			{
+				PrintPriceError();
+			}
+			else
+			{
+				((ControllerSimulationPriceMenu) controller).setNewPrice(input, newPrice);
+			}
+			
+			controller.setInput(-1);
 		}
 		else
 		{

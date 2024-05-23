@@ -66,4 +66,10 @@ public class ControllerSimulationPriceMenu extends Controller
 	{
 		return sim.getMaxDays();
 	}
+	
+	public void setNewPrice(int id, double newPrice)
+	{
+		sim.setNewPrice(id, newPrice);
+	}
+
 }

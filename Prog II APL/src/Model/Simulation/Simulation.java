@@ -207,6 +207,12 @@ public class Simulation
 	}
 	
 	
+	public void setNewPrice(int id, double newPrice)
+	{
+		this.kiosk.setPrice(id, newPrice);
+	}
+	
+	
 	public void nextDay()
 	{
 		kiosk.ageStorage();	
@@ -214,6 +220,103 @@ public class Simulation
 		// Day ended
 		this.currentDay += 1;
 		day = new Day();		
+	}
+	
+	
+	
+	public int getIceCreamSize()
+	{
+		return this.day.market.iceCream.size;
+	}
+	
+	public int getCigarettesSize()
+	{
+		return this.day.market.cigarettes.size;
+	}
+	
+	public int getFriesSize()
+	{
+		return this.day.market.fries.size;
+	}
+	
+	public int getNewspaperSize()
+	{
+		return this.day.market.newspaper.size;
+	}
+	
+	public int getGumSize()
+	{
+		return this.day.market.gum.size;
+	}
+	
+	public int getLemonadeSize()
+	{
+		return this.day.market.lemonade.size;
+	}
+	
+	public int getIceCreamExpiresDays()
+	{
+		return this.day.market.iceCream.expiresDays;
+	}
+	
+	public int getCigarettesExpiresDays()
+	{
+		return this.day.market.cigarettes.expiresDays;
+	}
+	
+	public int getGumExpiresDays()
+	{
+		return this.day.market.gum.expiresDays;
+	}
+	
+	public int getFiresExpiresDays()
+	{
+		return this.day.market.fries.expiresDays;
+	}
+	
+	public int getLemonadeExpiresDays()
+	{
+		return this.day.market.lemonade.expiresDays;
+	}
+	
+	public int getNewspaperExpiresDays()
+	{
+	    return this.day.market.newspaper.expiresDays;
+	}
+
+	public int getFriesExpiresDays()
+	{
+	    return this.day.market.fries.expiresDays;
+	}
+	
+	public double getIceCreamMarketPrice()
+	{
+	    return this.day.market.iceCreamPrice;
+	}
+
+	public double getGumMarketPrice()
+	{
+	    return this.day.market.gumPrice;
+	}
+
+	public double getNewspaperMarketPrice()
+	{
+	    return this.day.market.newspaperPrice;
+	}
+
+	public double getLemonadeMarketPrice()
+	{
+	    return this.day.market.lemonadePrice;
+	}
+
+	public double getCigarettesMarketPrice()
+	{
+	    return this.day.market.cigarettesPrice;
+	}
+
+	public double getFriesMarketPrice()
+	{
+		return this.day.market.friesPrice;
 	}
 	
 }
