@@ -42,7 +42,7 @@ public class ViewEnterUsernameMenu extends View
 		if(input.length() > 2 && input.length() < 30)
 		{
 			((ControllerEnterUsernameMenu) controller).setUserName(input);
-			controller.setInput(-1);
+			controller.setInput(0);
 		}
 		else
 		{

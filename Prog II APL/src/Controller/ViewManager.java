@@ -20,7 +20,9 @@ public class ViewManager
 		MainMenu,
 		LanguageMenu,
 		HighscoreMenu,
-		EnterUsernameMenu
+		EnterUsernameMenu,
+		SimulationMenu,
+		SimulationPriceMenu
 		
 	}
 	
@@ -109,6 +111,58 @@ public class ViewManager
 						break;
 				}
 				
+				break;
+				
+			case EnterUsernameMenu:
+				switch(input)
+				{
+					default:
+						currentView = ViewName.SimulationMenu;
+						this.controller = new ControllerSimulationMenu(this, trans, sim);
+						this.view = new ViewSimulationMenu(controller);
+						run();
+						break;
+				}
+				break;
+				
+			case SimulationMenu:
+				switch(input)
+				{
+					case 0:
+						currentView = ViewName.MainMenu;
+						this.controller = new ControllerMainMenu(this, trans);
+						this.view = new ViewMainMenu(controller);
+						run();
+						break;
+						
+					case 1:
+						break;
+						
+					case 2:
+						currentView = ViewName.SimulationPriceMenu;
+						this.controller = new ControllerSimulationPriceMenu(this, trans, this.sim);
+						this.view = new ViewSimulationPriceMenu(controller);
+						run();
+						break;
+						
+					case 3:
+						break;
+						
+					case 4:
+						break;
+				}
+				break;
+			
+			case SimulationPriceMenu:
+				switch(input)
+				{
+					case 0:
+						currentView = ViewName.SimulationMenu;
+						this.controller = new ControllerSimulationMenu(this, trans, sim);
+						this.view = new ViewSimulationMenu(controller);
+						run();
+						break;
+				}
 				break;
 		}
 	}

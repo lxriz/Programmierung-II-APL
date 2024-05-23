@@ -24,5 +24,7 @@ public class ControllerEnterUsernameMenu extends Controller
 	{	
 		this.kiosk = new Kiosk(name);
 		this.sim = new Simulation(kiosk);
+		
+		vm.setSimulation(sim);
 	}
 }

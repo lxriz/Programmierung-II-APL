@@ -142,13 +142,50 @@ public class Simulation
 		this.maxDays = 21;
 	}
 	
+	// GETS
 	
 	public int getCurrentDay()
 	{
 		return this.currentDay;
 	}
+	
+	
+	public int getWeather()
+	{
+		return this.day.weather;
+	}
 
 	
+	public String getOwnerName()
+	{
+		return this.kiosk.ownerName;
+	}
+	
+	
+	public int getUsedStorageSize()
+	{
+		return this.kiosk.getUsedStorageSize();
+	}
+	
+	public double getCash()
+	{
+		return this.kiosk.getCash();
+	}
+	
+	public int countProduct(String product)
+	{
+		return this.kiosk.countProduct(product);
+	}
+	
+	public int getMaxStorageSize()
+	{
+		return this.kiosk.storageSize;
+	}
+	
+	public int getMaxDays()
+	{
+		return this.maxDays;
+	}
 	
 	public boolean checkEndGame()
 	{
@@ -162,6 +199,11 @@ public class Simulation
 		}
 		
 		return false;
+	}
+	
+	public double getPrice(int id)
+	{
+		return this.kiosk.getPrice(id);
 	}
 	
 	
