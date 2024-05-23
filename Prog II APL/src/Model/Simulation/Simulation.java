@@ -1,6 +1,9 @@
 package Model.Simulation;
 
+import java.util.List;
 import java.util.Random;
+
+import Model.Simulation.Products.Product;
 
 
 public class Simulation 
@@ -222,7 +225,10 @@ public class Simulation
 		day = new Day();		
 	}
 	
-	
+	public List<Product> getStorage()
+	{
+		return kiosk.storage;
+	}
 	
 	public int getIceCreamSize()
 	{

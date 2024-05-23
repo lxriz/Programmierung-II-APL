@@ -232,7 +232,7 @@ public class ViewSimulationPriceMenu extends View
 		else
 		{
 			PrintInvalidInput();
-			print();
+			controller.setInput(-1);
 		} 
 	}
 }

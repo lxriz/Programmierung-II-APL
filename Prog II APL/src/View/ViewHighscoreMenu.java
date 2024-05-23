@@ -56,7 +56,7 @@ public class ViewHighscoreMenu extends View
 		else
 		{
 			PrintInvalidInput();
-			print();
+			controller.setInput(-1);
 		} 
 	}
 }

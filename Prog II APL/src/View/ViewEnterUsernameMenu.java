@@ -47,7 +47,7 @@ public class ViewEnterUsernameMenu extends View
 		else
 		{
 			PrintInvalidInput();
-			print();
+			controller.setInput(-1);
 		}
 
 	}

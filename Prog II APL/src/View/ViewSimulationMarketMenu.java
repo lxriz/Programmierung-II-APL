@@ -156,6 +156,28 @@ public class ViewSimulationMarketMenu extends View
 	}
 	
 	
+	private void printChangePrice()
+	{
+		PrintLineDashed();
+		System.out.println(" " + controller.getTrans("SIMULATION_PRICES_MENU_QUESTION"));
+	}
+	
+	private void PrintPriceError()
+	{
+		PrintLineDotted();
+		System.out.println(" " + controller.getTrans("SIMULATION_PRICE_MENU_ERROR_PRICE"));
+		PrintLineDotted();
+		
+		try
+		{
+			Thread.sleep(800);
+		}
+		catch(Exception e)
+		{
+			
+		}
+	}
+	
 	
 	@Override 
 	public void getInput()
@@ -178,10 +200,36 @@ public class ViewSimulationMarketMenu extends View
 		{
 			controller.setInput(input);
 		}
+		else if(input >= 1 && input <= 6)
+		{
+			printChangePrice();
+			
+			int amount = -1;
+			try
+			{	
+				PrintInput();
+				input = scan.nextInt();
+			}
+			catch(Exception e)
+			{
+				scan.nextLine();
+			}
+			
+			if(amount < 0)
+			{
+				PrintInvalidInput();
+			}
+			
+			controller.setInput(-1);
+		}
 		else
 		{
 			PrintInvalidInput();
-			print();
+			controller.setInput(-1);
 		} 
+		
+		
 	}
+	
+	
 }

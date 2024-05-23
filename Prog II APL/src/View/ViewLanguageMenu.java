@@ -64,7 +64,7 @@ public class ViewLanguageMenu extends View
 		else
 		{
 			PrintInvalidInput();
-			print();
+			controller.setInput(-1);
 		} 
 	}
 	

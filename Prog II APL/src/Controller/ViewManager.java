@@ -23,7 +23,8 @@ public class ViewManager
 		EnterUsernameMenu,
 		SimulationMenu,
 		SimulationPriceMenu,
-		SimulationMarketMenu
+		SimulationMarketMenu,
+		SimulationStorageMenu
 		
 	}
 	
@@ -117,6 +118,9 @@ public class ViewManager
 			case EnterUsernameMenu:
 				switch(input)
 				{
+					case -1:
+						run();
+						break;
 					default:
 						currentView = ViewName.SimulationMenu;
 						this.controller = new ControllerSimulationMenu(this, trans, sim);
@@ -129,6 +133,9 @@ public class ViewManager
 			case SimulationMenu:
 				switch(input)
 				{
+					case -1:
+						run();
+						break;
 					case 0:
 						currentView = ViewName.MainMenu;
 						this.controller = new ControllerMainMenu(this, trans);
@@ -147,7 +154,12 @@ public class ViewManager
 						break;
 						
 					case 3:
+						currentView = ViewName.SimulationStorageMenu;
+						this.controller = new ControllerSimulationStorageMenu(this, trans, this.sim);
+						this.view = new ViewSimulationStorageMenu(controller);
+						run();
 						break;
+					
 						
 					case 4:
 						currentView = ViewName.SimulationMarketMenu;
@@ -176,15 +188,31 @@ public class ViewManager
 			case SimulationMarketMenu:
 				switch(input)
 				{
-				case -1:
-					run();
-					break;
-				case 0:
-					currentView = ViewName.SimulationMenu;
-					this.controller = new ControllerSimulationMenu(this, trans, sim);
-					this.view = new ViewSimulationMenu(controller);
-					run();
-					break;
+					case -1:
+						run();
+						break;
+					case 0:
+						currentView = ViewName.SimulationMenu;
+						this.controller = new ControllerSimulationMenu(this, trans, sim);
+						this.view = new ViewSimulationMenu(controller);
+						run();
+						break;
+				}
+				break;
+				
+			case SimulationStorageMenu:
+				switch(input)
+				{
+					case -1:
+						run();
+						break;
+					case 0:
+						currentView = ViewName.SimulationMenu;
+						this.controller = new ControllerSimulationMenu(this, trans, sim);
+						this.view = new ViewSimulationMenu(controller);
+						run();
+						break;
+				
 				}
 				break;
 		}

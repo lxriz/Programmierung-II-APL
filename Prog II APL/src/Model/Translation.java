@@ -10,14 +10,14 @@ import org.json.simple.parser.ParseException;
 
 public final class Translation 
 {
-	private static HashMap<String, String> translation = new HashMap<>();
-	private static String[] supportedLanguages = {"DE", "ENG"};
+	private HashMap<String, String> translation = new HashMap<>();
+	private String[] supportedLanguages = {"DE", "ENG", "FR"};
 	
-	private static String defaultLanguage = "ENG";
+	private String defaultLanguage = "ENG";
 	
 	
 	// ACHTUNG NOCH NICHT DYNAMISCH !!!
-	private static final String path = "/Users/loris/git/Prog II APL/Prog II APL/src/Model/translation.json";
+	private final String path = "/Users/loris/git/Prog II APL/Prog II APL/src/Model/translation.json";
 	
 	
 	
@@ -52,13 +52,16 @@ public final class Translation
 		switch(lang)
 		{
 			case "DE":
-				readFile("DE");
+				readFile(lang);
 				break;
 				
 			case "ENG":
-				readFile("ENG");
+				readFile(lang);
 				break;
-			
+			case "FR":
+				readFile(lang);
+				break;
+				
 			default:
 				return false;
 		}
