@@ -177,6 +177,20 @@ public class ViewSimulationStorageMenu extends View
 		{
 			controller.setInput(input);
 		}
+		else if(input >= 1 && input <= 2)
+		{
+			switch(input)
+			{
+				case 1:
+					((ControllerSimulationStorageMenu) controller).sortStorageName();
+					break;
+				case 2:
+					((ControllerSimulationStorageMenu) controller).sortStorageExpired();
+					break;
+			}
+			
+			controller.setInput(-1);
+		}
 		else
 		{
 			PrintInvalidInput();
