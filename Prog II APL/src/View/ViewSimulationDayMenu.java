@@ -197,6 +197,5 @@ public class ViewSimulationDayMenu extends View
 	public void getInput()
 	{
 		controller.setInput(-1);
-		
 	}
 }

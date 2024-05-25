@@ -60,5 +60,6 @@ public class ViewMainMenu extends View
 			PrintInvalidInput();
 			controller.setInput(-1);
 		} 
+		
 	}
 }

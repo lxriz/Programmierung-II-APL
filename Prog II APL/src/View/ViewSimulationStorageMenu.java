@@ -127,6 +127,7 @@ public class ViewSimulationStorageMenu extends View
 		
 	}
 	
+	
 	@Override
 	public void print()
 	{
@@ -172,7 +173,6 @@ public class ViewSimulationStorageMenu extends View
 		}
 		
 		
-		
 		if(input == 0)
 		{
 			controller.setInput(input);
@@ -196,5 +196,6 @@ public class ViewSimulationStorageMenu extends View
 			PrintInvalidInput();
 			controller.setInput(-1);
 		} 
+		
 	}
 }

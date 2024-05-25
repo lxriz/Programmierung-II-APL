@@ -25,8 +25,8 @@ public class ViewManager
 		SimulationPriceMenu,
 		SimulationMarketMenu,
 		SimulationStorageMenu,
-		SimulationDayMenu
-		
+		SimulationDayMenu,
+		SimulationEndMenu
 	}
 	
 	
@@ -62,21 +62,18 @@ public class ViewManager
 						// Exits Program
 						break;
 					case 1:
-						// Starts Game
 						currentView = ViewName.EnterUsernameMenu;
 						this.controller = new ControllerEnterUsernameMenu(this, trans);
 						this.view = new ViewEnterUsernameMenu(controller);
 						run();
 						break;
 					case 2:
-						// Language Menu
 						currentView = ViewName.LanguageMenu;
 						this.controller = new ControllerLanguageMenu(this, trans);
 						this.view = new ViewLanguageMenu(controller);
 						run();
 						break;
 					case 3:
-						// Highscore Menu
 						currentView = ViewName.HighscoreMenu;
 						this.controller = new ControllerHighscoreMenu(this, trans);
 						this.view = new ViewHighscoreMenu(controller);
@@ -227,14 +224,41 @@ public class ViewManager
 				case -1:
 					run();
 					break;
-				default:
+				case 0:
 					currentView = ViewName.SimulationMenu;
 					this.controller = new ControllerSimulationMenu(this, trans, sim);
 					this.view = new ViewSimulationMenu(controller);
 					run();
 					break;
+				case 1:
+					currentView = ViewName.SimulationEndMenu;
+					this.controller = new ControllerSimulationEndMenu(this, trans, sim);
+					this.view = new ViewSimulationEndMenu(controller);
+					run();
 					
 					}
+				break;
+				
+			case SimulationEndMenu:
+				switch(input)
+				{
+					case -1:
+						run();
+						break;
+					case 1:
+						currentView = ViewName.HighscoreMenu;
+						this.controller = new ControllerHighscoreMenu(this, trans);
+						this.view = new ViewHighscoreMenu(controller);
+						run();
+						break;
+					case 2:
+						currentView = ViewName.MainMenu;
+						this.controller = new ControllerMainMenu(this, trans);
+						this.view = new ViewMainMenu(controller);
+						run();
+						break;
+				
+				}
 				break;
 		}
 	}

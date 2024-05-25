@@ -142,7 +142,7 @@ public class Simulation
 		this.day = new Day();
 		
 		this.currentDay = 1;
-		this.maxDays = 21;
+		this.maxDays = 2;
 	}
 	
 	// GETS
@@ -174,6 +174,12 @@ public class Simulation
 	{
 		return this.kiosk.getCash();
 	}
+	
+	public double getStartCash()
+	{
+		return this.kiosk.startCash;
+	}
+	
 	
 	public int countProduct(String product)
 	{

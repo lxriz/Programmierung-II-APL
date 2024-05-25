@@ -4,6 +4,7 @@ import java.util.Scanner;
 import Controller.Controller;
 import Controller.ControllerSimulationMarketMenu;
 
+
 public class ViewSimulationMarketMenu extends View
 {	
 	public ViewSimulationMarketMenu(Controller controller)
@@ -156,26 +157,10 @@ public class ViewSimulationMarketMenu extends View
 	}
 	
 	
-	private void printChangePrice()
+	private void PrintGetAmount()
 	{
 		PrintLineDashed();
-		System.out.println(" " + controller.getTrans("SIMULATION_PRICES_MENU_QUESTION"));
-	}
-	
-	private void PrintPriceError()
-	{
-		PrintLineDotted();
-		System.out.println(" " + controller.getTrans("SIMULATION_PRICE_MENU_ERROR_PRICE"));
-		PrintLineDotted();
-		
-		try
-		{
-			Thread.sleep(800);
-		}
-		catch(Exception e)
-		{
-			
-		}
+		System.out.println(" " + controller.getTrans("SIMULATION_MARKET_MENU_QUESTION_2"));
 	}
 	
 	
@@ -202,7 +187,7 @@ public class ViewSimulationMarketMenu extends View
 		}
 		else if(input >= 1 && input <= 6)
 		{
-			printChangePrice();
+			PrintGetAmount();
 			
 			int amount = -1;
 			try
@@ -226,10 +211,7 @@ public class ViewSimulationMarketMenu extends View
 		{
 			PrintInvalidInput();
 			controller.setInput(-1);
-		} 
-		
+		} 	
 		
 	}
-	
-	
 }

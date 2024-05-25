@@ -234,5 +234,6 @@ public class ViewSimulationPriceMenu extends View
 			PrintInvalidInput();
 			controller.setInput(-1);
 		} 
+		
 	}
 }

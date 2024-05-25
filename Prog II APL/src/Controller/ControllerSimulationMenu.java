@@ -20,7 +20,6 @@ public class ControllerSimulationMenu extends Controller
 		vm.setInput(input);
 	}
 	
-	
 	public int getWeather()
 	{
 		return sim.getWeather();

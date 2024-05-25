@@ -25,11 +25,24 @@ public class ControllerSimulationDayMenu extends Controller
 		}
 		else 
 		{
+			this.sim.nextDay();
 			vm.setSimulation(sim);
-			vm.setInput(0);
+			if(checkEnd())
+			{
+				vm.setInput(1);
+			}
+			else
+			{
+				vm.setInput(0);
+			}
 		}
 	}
-		
+	
+	public boolean checkEnd()
+	{
+		return sim.checkEndGame();
+	}	
+	
 	public int[] getResponse() 
 	{
 		this.countCustomers --;

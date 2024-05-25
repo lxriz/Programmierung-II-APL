@@ -66,6 +66,8 @@ public class ViewLanguageMenu extends View
 			PrintInvalidInput();
 			controller.setInput(-1);
 		} 
+		
+		
 	}
 	
 }

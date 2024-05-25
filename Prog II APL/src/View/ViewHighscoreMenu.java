@@ -58,5 +58,6 @@ public class ViewHighscoreMenu extends View
 			PrintInvalidInput();
 			controller.setInput(-1);
 		} 
+		
 	}
 }

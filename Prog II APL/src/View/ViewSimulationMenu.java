@@ -152,7 +152,7 @@ public class ViewSimulationMenu extends View
 	
 	@Override
 	public void getInput()
-	{
+	{	
 		Scanner scan = new Scanner(System.in);
 		
 		int input = -1;
@@ -175,7 +175,7 @@ public class ViewSimulationMenu extends View
 		{
 			PrintInvalidInput();
 			controller.setInput(-1);
-		} 
+		} 	
 	}
 	
 }
