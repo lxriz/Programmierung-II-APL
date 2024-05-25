@@ -225,6 +225,16 @@ public class Simulation
 		day = new Day();		
 	}
 	
+	public int[] getResponse()
+	{
+		return this.day.nextCustomer();
+	}
+	
+	public int getCountCustomers()
+	{
+		return this.day.countCustomers;
+	}
+	
 	public List<Product> getStorage()
 	{
 		return kiosk.storage;

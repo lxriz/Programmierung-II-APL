@@ -28,15 +28,15 @@ public class Customer
 			// Sum = 1
 			case 0:		
 				// Rainy
-				demand = new double[]{0.19, 0.20, 0.14, 0.07, 0.12, 0.18};
+				demand = new double[]{0.20, 0.10, 0.10, 0.05, 0.10, 0.45};
 				break;
 			case 1:	
 				// Cloudy
-				demand = new double[]{0.15, 0.18, 0.16, 0.14, 0.12, 0.20};
+				demand = new double[]{0.15, 0.15, 0.15, 0.10, 0.15, 0.30};
 				break;
 			case 2:	
 				// Sunny
-				demand = new double[]{0.09, 0.15, 0.16, 0.25, 0.12, 0.20};
+				demand = new double[]{0.10, 0.10, 0.10, 0.30, 0.25, 0.15};
 				break;
 		}
 	}

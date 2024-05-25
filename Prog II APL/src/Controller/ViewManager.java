@@ -24,7 +24,8 @@ public class ViewManager
 		SimulationMenu,
 		SimulationPriceMenu,
 		SimulationMarketMenu,
-		SimulationStorageMenu
+		SimulationStorageMenu,
+		SimulationDayMenu
 		
 	}
 	
@@ -144,6 +145,10 @@ public class ViewManager
 						break;
 						
 					case 1:
+						currentView = ViewName.SimulationDayMenu;
+						this.controller = new ControllerSimulationDayMenu(this, trans, this.sim);
+						this.view = new ViewSimulationDayMenu(controller);
+						run();
 						break;
 						
 					case 2:
@@ -214,6 +219,22 @@ public class ViewManager
 						break;
 				
 				}
+				break;
+				
+			case SimulationDayMenu:
+				switch(input)
+					{
+				case -1:
+					run();
+					break;
+				default:
+					currentView = ViewName.SimulationMenu;
+					this.controller = new ControllerSimulationMenu(this, trans, sim);
+					this.view = new ViewSimulationMenu(controller);
+					run();
+					break;
+					
+					}
 				break;
 		}
 	}
