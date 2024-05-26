@@ -60,7 +60,7 @@ public class Kiosk
 	
 	public boolean canPay(double change)
 	{
-		if(this.cash+change >= 0)
+		if(this.cash-change >= 0)
 		{
 			return true;
 		}
@@ -69,7 +69,7 @@ public class Kiosk
 	}
 	
 	
-	public void setCash(double change)
+	public void addCash(double change)
 	{
 		if(canPay(cash))
 		{

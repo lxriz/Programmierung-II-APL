@@ -3,6 +3,7 @@ package View;
 import java.util.Scanner;
 import Controller.Controller;
 import Controller.ControllerSimulationMarketMenu;
+import Model.Simulation.Simulation.BuyProductResponse;
 
 
 public class ViewSimulationMarketMenu extends View
@@ -163,6 +164,39 @@ public class ViewSimulationMarketMenu extends View
 		System.out.println(" " + controller.getTrans("SIMULATION_MARKET_MENU_QUESTION_2"));
 	}
 	
+	public void PrintStorageError()
+	{
+		PrintLineDotted();
+		System.out.println(" " + controller.getTrans("SIMULATION_MARKET_MENU_ERROR_STORAGE"));
+		PrintLineDotted();
+		
+		try
+		{
+			Thread.sleep(800);
+		}
+		catch(Exception e)
+		{
+			
+		}
+	}
+	
+	
+	public void PrintCashError()
+	{
+		PrintLineDotted();
+		System.out.println(" " + controller.getTrans("SIMULATION_MARKET_MENU_ERROR_CASH"));
+		PrintLineDotted();
+		
+		try
+		{
+			Thread.sleep(800);
+		}
+		catch(Exception e)
+		{
+			
+		}
+	}
+	
 	
 	@Override 
 	public void getInput()
@@ -193,7 +227,7 @@ public class ViewSimulationMarketMenu extends View
 			try
 			{	
 				PrintInput();
-				input = scan.nextInt();
+				amount = scan.nextInt();
 			}
 			catch(Exception e)
 			{
@@ -203,6 +237,18 @@ public class ViewSimulationMarketMenu extends View
 			if(amount < 0)
 			{
 				PrintInvalidInput();
+			}
+			
+			BuyProductResponse response = ((ControllerSimulationMarketMenu) controller).buyProduct(input, amount);
+			
+			if(response == BuyProductResponse.NotEnoughMoney)
+			{
+				PrintCashError();
+			}
+			
+			if(response == BuyProductResponse.NotEnoughStorage)
+			{
+				PrintStorageError();
 			}
 			
 			controller.setInput(-1);

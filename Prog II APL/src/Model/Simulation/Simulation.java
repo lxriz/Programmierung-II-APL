@@ -2,8 +2,7 @@ package Model.Simulation;
 
 import java.util.List;
 import java.util.Random;
-
-import Model.Simulation.Products.Product;
+import Model.Simulation.Products.*;
 
 
 public class Simulation 
@@ -49,7 +48,7 @@ public class Simulation
 						{
 							if(customer.willBuy(market.cigarettesPrice, kiosk.getPrice(choice)))
 							{
-								kiosk.setCash(kiosk.getPrice(choice));
+								kiosk.addCash(kiosk.getPrice(choice));
 								kiosk.removeFromStorage("PRODUCT_NAME_CIGARETTES");
 								return new int[]{customer.age, choice, 2};
 							}
@@ -62,7 +61,7 @@ public class Simulation
 						{
 							if(customer.willBuy(market.friesPrice, kiosk.getPrice(choice)))
 							{
-								kiosk.setCash(kiosk.getPrice(choice));
+								kiosk.addCash(kiosk.getPrice(choice));
 								kiosk.removeFromStorage("PRODUCT_NAME_FRIES");
 								return new int[]{customer.age, choice, 2};
 							}
@@ -75,7 +74,7 @@ public class Simulation
 						{
 							if(customer.willBuy(market.gumPrice, kiosk.getPrice(choice)))
 							{
-								kiosk.setCash(kiosk.getPrice(choice));
+								kiosk.addCash(kiosk.getPrice(choice));
 								kiosk.removeFromStorage("PRODUCT_NAME_GUM");
 								return new int[]{customer.age, choice, 2};
 							}
@@ -88,7 +87,7 @@ public class Simulation
 						{
 							if(customer.willBuy(market.iceCreamPrice, kiosk.getPrice(choice)))
 							{
-								kiosk.setCash(kiosk.getPrice(choice));
+								kiosk.addCash(kiosk.getPrice(choice));
 								kiosk.removeFromStorage("PRODUCT_NAME_ICE_CREAM");
 								return new int[]{customer.age, choice, 2};
 							}
@@ -101,7 +100,7 @@ public class Simulation
 						{
 							if(customer.willBuy(market.lemonadePrice, kiosk.getPrice(choice)))
 							{
-								kiosk.setCash(kiosk.getPrice(choice));
+								kiosk.addCash(kiosk.getPrice(choice));
 								kiosk.removeFromStorage("PRODUCT_NAME_LEMONADE");
 								return new int[]{customer.age, choice, 2};
 							}
@@ -114,7 +113,7 @@ public class Simulation
 						{
 							if(customer.willBuy(market.newspaperPrice, kiosk.getPrice(choice)))
 							{
-								kiosk.setCash(kiosk.getPrice(choice));
+								kiosk.addCash(kiosk.getPrice(choice));
 								kiosk.removeFromStorage("PRODUCT_NAME_NEWSPAPER");
 								return new int[]{customer.age, choice, 2};
 							}
@@ -145,7 +144,146 @@ public class Simulation
 		this.maxDays = 2;
 	}
 	
-	// GETS
+	
+	
+	public enum BuyProductResponse
+	{
+		Bought, 
+		NotEnoughMoney,
+		NotEnoughStorage
+	}
+	
+	public BuyProductResponse buyCigarettes(int amount)
+	{
+		if(!kiosk.canStore(amount*this.day.market.cigarettes.size))
+		{
+			return BuyProductResponse.NotEnoughStorage;
+		}
+		
+		if(!kiosk.canPay(amount*this.day.market.cigarettesPrice))
+		{
+			return BuyProductResponse.NotEnoughMoney;
+		}
+		
+		for(int i = 0; i < amount; i++)
+		{
+			kiosk.addStorage(new Cigarettes(this.day.market.cigarettesPrice));
+	        kiosk.addCash(-this.day.market.cigarettesPrice);
+
+		}
+		
+		return BuyProductResponse.Bought;
+	}
+	
+	public BuyProductResponse buyFries(int amount)
+	{
+	    if(!kiosk.canStore(amount * this.day.market.fries.size))
+	    {
+	        return BuyProductResponse.NotEnoughStorage;
+	    }
+
+	    if(!kiosk.canPay(amount * this.day.market.friesPrice))
+	    {
+	        return BuyProductResponse.NotEnoughMoney;
+	    }
+
+	    for(int i = 0; i < amount; i++)
+	    {
+	        kiosk.addStorage(new Fries(this.day.market.friesPrice));
+	        kiosk.addCash(-this.day.market.friesPrice);
+
+	    }
+
+	    return BuyProductResponse.Bought;
+	}
+
+	public BuyProductResponse buyNewspaper(int amount)
+	{
+	    if(!kiosk.canStore(amount * this.day.market.newspaper.size))
+	    {
+	        return BuyProductResponse.NotEnoughStorage;
+	    }
+
+	    if(!kiosk.canPay(amount * this.day.market.newspaperPrice))
+	    {
+	        return BuyProductResponse.NotEnoughMoney;
+	    }
+
+	    for(int i = 0; i < amount; i++)
+	    {
+	        kiosk.addStorage(new Newspaper(this.day.market.newspaperPrice));
+	        kiosk.addCash(-this.day.market.newspaperPrice);
+
+	    }
+
+	    return BuyProductResponse.Bought;
+	}
+
+	public BuyProductResponse buyGum(int amount)
+	{
+	    if(!kiosk.canStore(amount * this.day.market.gum.size))
+	    {
+	        return BuyProductResponse.NotEnoughStorage;
+	    }
+
+	    if(!kiosk.canPay(amount * this.day.market.gumPrice))
+	    {
+	        return BuyProductResponse.NotEnoughMoney;
+	    }
+
+	    for(int i = 0; i < amount; i++)
+	    {
+	        kiosk.addStorage(new Gum(this.day.market.gumPrice));
+	        kiosk.addCash(-this.day.market.gumPrice);
+
+	    }
+
+	    return BuyProductResponse.Bought;
+	}
+
+	public BuyProductResponse buyIceCream(int amount)
+	{
+	    if(!kiosk.canStore(amount * this.day.market.iceCream.size))
+	    {
+	        return BuyProductResponse.NotEnoughStorage;
+	    }
+
+	    if(!kiosk.canPay(amount * this.day.market.iceCreamPrice))
+	    {
+	        return BuyProductResponse.NotEnoughMoney;
+	    }
+
+	    for(int i = 0; i < amount; i++)
+	    {
+	        kiosk.addStorage(new IceCream(this.day.market.iceCreamPrice));
+	        kiosk.addCash(-this.day.market.iceCreamPrice);
+
+	    }
+
+	    return BuyProductResponse.Bought;
+	}
+
+	public BuyProductResponse buyLemonade(int amount)
+	{
+	    if(!kiosk.canStore(amount * this.day.market.lemonade.size))
+	    {
+	        return BuyProductResponse.NotEnoughStorage;
+	    }
+
+	    if(!kiosk.canPay(amount * this.day.market.lemonadePrice))
+	    {
+	        return BuyProductResponse.NotEnoughMoney;
+	    }
+
+	    for(int i = 0; i < amount; i++)
+	    {
+	        kiosk.addStorage(new Lemonade(this.day.market.lemonadePrice));
+	        kiosk.addCash(-this.day.market.lemonadePrice);
+	    }
+
+	    return BuyProductResponse.Bought;
+	}
+
 	
 	public int getCurrentDay()
 	{

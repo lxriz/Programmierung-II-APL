@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Translation;
 import Model.Simulation.Simulation;
+import Model.Simulation.Simulation.BuyProductResponse;
 
 public class ControllerSimulationMarketMenu extends Controller
 {
@@ -21,6 +22,57 @@ private Simulation sim;
 		vm.setInput(input);
 	}
 	
+	public BuyProductResponse buyProduct(int id, int amount)
+	{
+		switch(id)
+		{
+			case 1:
+				return this.sim.buyCigarettes(amount);
+			case 2:
+				return this.sim.buyFries(amount);
+			case 3:
+				return this.sim.buyGum(amount);
+			case 4:
+				return this.sim.buyIceCream(amount);
+			case 5:
+				return this.sim.buyLemonade(amount);
+			case 6:
+				return this.sim.buyNewspaper(amount);
+		}
+		
+		return BuyProductResponse.NotEnoughMoney;
+	}
+	
+	public BuyProductResponse buyCigarettes(int amount)
+	{
+		return this.sim.buyCigarettes(amount);
+	}
+	
+	public BuyProductResponse buyFries(int amount)
+	{
+	    return this.sim.buyFries(amount);
+	}
+
+	public BuyProductResponse buyNewspaper(int amount)
+	{
+	    return this.sim.buyNewspaper(amount);
+	}
+
+	public BuyProductResponse buyGum(int amount)
+	{
+	    return this.sim.buyGum(amount);
+	}
+
+	public BuyProductResponse buyIceCream(int amount)
+	{
+	    return this.sim.buyIceCream(amount);
+	}
+
+	public BuyProductResponse buyLemonade(int amount)
+	{
+	    return this.sim.buyLemonade(amount);
+	}
+
 	
 	public double getPrice(int id)
 	{
