@@ -3,15 +3,13 @@ package Controller;
 import Model.Translation;
 import Model.Simulation.Simulation;
 
-public class ControllerSimulationDayMenu extends Controller
+public class ControllerSimulationDayMenu extends ControllerSimulation
 {
-	private Simulation sim;
 	private int countCustomers = 0;
 	
 	public ControllerSimulationDayMenu(ViewManager vm, Translation trans, Simulation sim)
 	{
-		super(vm, trans);
-		this.sim = sim;
+		super(vm, trans, sim);
 		this.countCustomers = this.sim.getCountCustomers();
 	}
 	
@@ -54,43 +52,4 @@ public class ControllerSimulationDayMenu extends Controller
 		return this.countCustomers;
 	}
 	
-	public int getWeather()
-	{
-		return sim.getWeather();
-	}
-	
-	public String getOwnerName()
-	{
-		return sim.getOwnerName();
-	}
-	
-	public int getCurrentDay()
-	{
-		return sim.getCurrentDay();
-	}
-	
-	public int getUsedStorageSize()
-	{
-		return sim.getUsedStorageSize();
-	}
-	
-	public double getCash()
-	{
-		return sim.getCash();
-	}
-	
-	public int countProduct(String product)
-	{
-		return sim.countProduct(product);
-	}
-	
-	public int getMaxStorageSize()
-	{
-		return sim.getMaxStorageSize();
-	}
-	
-	public int getMaxDays()
-	{
-		return sim.getMaxDays();
-	}
 }

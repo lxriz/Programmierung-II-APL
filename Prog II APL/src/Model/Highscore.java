@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 
 public class Highscore 
 {
@@ -23,6 +24,64 @@ public class Highscore
 		}
 	}
 	
+	public void getNewScore(String[] score)
+	{
+		int i = 0;
+		String[] temp = score;
+		for(String[] entry : this.list)
+		{
+			if(entry[0] == null)
+			{
+				this.list[i][0] = temp[0];
+				this.list[i][1] = temp[1];
+				break;
+			}
+			
+			if(Double.parseDouble(temp[1]) > Double.parseDouble(this.list[i][1]))
+			{
+				String temp0 = this.list[i][0];
+				String temp1 = this.list[i][1];
+			
+				this.list[i][0] = temp[0];
+				this.list[i][1] = temp[1];
+				
+				temp[0] = temp0;
+				temp[1] = temp1;
+			}
+			i++;
+		}
+		
+		writeFile();
+	}
+	
+	private void writeFile()
+	{
+		try 
+		{
+			FileWriter writer = new FileWriter(path);
+			BufferedWriter buffer = new BufferedWriter(writer);
+			
+			for(String[] entry : this.list)
+			{
+				if(entry[0] == null)
+				{
+					break;
+				}
+				buffer.write(entry[0]);
+				buffer.write(";");
+				buffer.write(entry[1]);
+				buffer.newLine();
+			}
+			
+			buffer.close();
+			writer.close();
+		} 
+		catch (IOException e) 
+		{
+			
+		}
+	}
+	
 	
 	public String[][] getScore()
 	{
@@ -35,7 +94,7 @@ public class Highscore
 	}
 	
 	
-	public boolean checkFile()
+	private boolean checkFile()
 	{
 		File file = new File(path);
 		
@@ -55,7 +114,7 @@ public class Highscore
 	}
 	
 	
-	public boolean readFile()
+	private boolean readFile()
 	{
 		try 
 		{

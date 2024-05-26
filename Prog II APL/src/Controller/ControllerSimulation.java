@@ -3,25 +3,14 @@ package Controller;
 import Model.Translation;
 import Model.Simulation.Simulation;
 
-public class ControllerSimulationPriceMenu extends ControllerSimulation
-{	
-	public ControllerSimulationPriceMenu(ViewManager vm, Translation trans, Simulation sim)
+public abstract class ControllerSimulation extends Controller
+{
+	Simulation sim;
+	
+	public ControllerSimulation(ViewManager vm, Translation trans, Simulation sim)
 	{
-		super(vm, trans, sim);
-	}
-	
-	
-	@Override
-	public void setInput(int input)
-	{	
-		vm.setSimulation(sim);
-		vm.setInput(input);
-	}
-	
-	
-	public double getPrice(int id)
-	{
-		return sim.getPrice(id);
+		super(vm, trans);
+		this.sim = sim;
 	}
 	
 	public int getWeather()
@@ -63,10 +52,4 @@ public class ControllerSimulationPriceMenu extends ControllerSimulation
 	{
 		return sim.getMaxDays();
 	}
-	
-	public void setNewPrice(int id, double newPrice)
-	{
-		sim.setNewPrice(id, newPrice);
-	}
-
 }

@@ -6,7 +6,7 @@ import Controller.ControllerSimulationMarketMenu;
 import Model.Simulation.Simulation.BuyProductResponse;
 
 
-public class ViewSimulationMarketMenu extends View
+public class ViewSimulationMarketMenu extends ViewSimulation
 {	
 	public ViewSimulationMarketMenu(Controller controller)
 	{
@@ -18,113 +18,6 @@ public class ViewSimulationMarketMenu extends View
 		return String.format("%.2f", d);
 	}
 	
-	private void PrintSimulationAnimation(int weather)
-	{
-		switch(weather)
-		{
-			case 0:
-				// RAINY
-				System.out.println("\t\t/\t    /      /      /   / ");
-				System.out.println("\t\t/\t / _____/___      /");
-				System.out.println("\t/\t\t  /         \\       /   /");
-				System.out.println("\t\t/\t  |   ___   |            /");
-				System.out.println("\t\t/\t  |  |___|  | /        /");
-				System.out.println("\t/\t\t/ |_________|       /");
-				break;
-			case 1:
-				// CLOUDY
-				System.out.println("\t\t\t               \t ooOoo");
-				System.out.println("\t\t\t   _________   \toOOooOoOoo");
-				System.out.println("\t\t\t  /         \\ \t ooOOooo");
-				System.out.println("\t\t\t  |   ___   |");
-				System.out.println("\t\t\t  |  |___|  |");
-				System.out.println("\t\t\t  |_________|");
-				break;
-			case 2:
-				// SUNNY
-				System.out.println("\t\t\t               \t \\|/");
-				System.out.println("\t\t\t   _________   \t-ooo-");
-				System.out.println("\t\t\t  /         \\ \t /|\\");
-				System.out.println("\t\t\t  |   ___   |");
-				System.out.println("\t\t\t  |  |___|  |");
-				System.out.println("\t\t\t  |_________|");
-				break;
-				
-		}
-	}
-	
-	
-	public void PrintSimulationHeader()
-	{			
-		String weekday = "";
-		String weatherText = "";
-		
-		// Lookup table weekday
-		switch(((ControllerSimulationMarketMenu) controller).getCurrentDay() % 7)
-		{
-			case 0:
-				weekday = "DAY_7";
-				break;
-			case 1:
-				weekday = "DAY_1";
-				break;
-			case 2:
-				weekday = "DAY_2";
-				break;
-			case 3:
-				weekday = "DAY_3";
-				break;
-			case 4:
-				weekday = "DAY_4";
-				break;
-			case 5:
-				weekday = "DAY_5";
-				break;
-			case 6:
-				weekday = "DAY_6";
-				break;
-		}
-		
-		// Lookup table weather
-		switch(((ControllerSimulationMarketMenu) controller).getWeather())
-		{
-			case 0:
-				weatherText = "WEATHER_RAINY";
-				break;
-			case 1:
-				weatherText = "WEATHER_CLOUDY";
-				break;
-			case 2:
-				weatherText = "WEATHER_SUNNY";
-				break;
-		}
-		
-		
-		PrintSimulationAnimation(((ControllerSimulationMarketMenu) controller).getWeather());
-		
-		System.out.println("  " + controller.getTrans(weatherText) + "\t\t\t\t" + "[" + ((ControllerSimulationMarketMenu) controller).getOwnerName() + "'s Kiosk]");
-		PrintLine();
-		System.out.println("  | " + controller.getTrans(weekday) + " |\t\t\t" + controller.getTrans("SIMULATION_HEADER_WEATHER_1") + " " + ((ControllerSimulationMarketMenu) controller).getCurrentDay() + " " + controller.getTrans("SIMULATION_HEADER_WEATHER_2") + " " + ((ControllerSimulationMarketMenu) controller).getMaxDays());
-		PrintLineDashed();		
-		System.out.println("  | " + controller.getTrans("SIMULATION_HEADER_MONEY") + " |\t\t\t" + formateDouble(((ControllerSimulationMarketMenu) controller).getCash()) + "€");
-		PrintLineDashed();
-		System.out.println("  | " + controller.getTrans("SIMULATION_HEADER_STORAGE_1") + " |\t\t\t" + ((ControllerSimulationMarketMenu) controller).getUsedStorageSize() + " " + controller.getTrans("SIMULATION_HEADER_STORAGE_2") + " " + ((ControllerSimulationMarketMenu) controller).getMaxStorageSize() + " " + controller.getTrans("SIMULATION_HEADER_STORAGE_3"));
-		PrintLine();
-		
-		System.out.println("    " + ((ControllerSimulationMarketMenu) controller).countProduct("PRODUCT_NAME_CIGARETTES") + " X " + controller.getTrans("PRODUCT_NAME_CIGARETTES"));
-		PrintLineDashed();
-		System.out.println("    " + ((ControllerSimulationMarketMenu) controller).countProduct("PRODUCT_NAME_FRIES") + " X " + controller.getTrans("PRODUCT_NAME_FRIES"));
-		PrintLineDashed();		
-		System.out.println("    " + ((ControllerSimulationMarketMenu) controller).countProduct("PRODUCT_NAME_GUM") + " X " + controller.getTrans("PRODUCT_NAME_GUM"));
-		PrintLineDashed();
-		System.out.println("    " + ((ControllerSimulationMarketMenu) controller).countProduct("PRODUCT_NAME_ICE_CREAM") + " X " + controller.getTrans("PRODUCT_NAME_ICE_CREAM"));
-		PrintLineDashed();
-		System.out.println("    " + ((ControllerSimulationMarketMenu) controller).countProduct("PRODUCT_NAME_LEMONADE") + " X " + controller.getTrans("PRODUCT_NAME_LEMONADE"));
-		PrintLineDashed();
-		System.out.println("    " + ((ControllerSimulationMarketMenu) controller).countProduct("PRODUCT_NAME_NEWSPAPER") + " X " + controller.getTrans("PRODUCT_NAME_NEWSPAPER"));
-		PrintLine();
-		
-	}
 	
 	@Override
 	public void print()

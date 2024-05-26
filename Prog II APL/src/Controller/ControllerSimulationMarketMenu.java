@@ -4,13 +4,12 @@ import Model.Translation;
 import Model.Simulation.Simulation;
 import Model.Simulation.Simulation.BuyProductResponse;
 
-public class ControllerSimulationMarketMenu extends Controller
+public class ControllerSimulationMarketMenu extends ControllerSimulation
 {
-private Simulation sim;
 	
 	public ControllerSimulationMarketMenu(ViewManager vm, Translation trans, Simulation sim)
 	{
-		super(vm, trans);
+		super(vm, trans, sim);
 		this.sim = sim;
 	}
 	
@@ -79,45 +78,6 @@ private Simulation sim;
 		return sim.getPrice(id);
 	}
 	
-	public int getWeather()
-	{
-		return sim.getWeather();
-	}
-	
-	public String getOwnerName()
-	{
-		return sim.getOwnerName();
-	}
-	
-	public int getCurrentDay()
-	{
-		return sim.getCurrentDay();
-	}
-	
-	public int getUsedStorageSize()
-	{
-		return sim.getUsedStorageSize();
-	}
-	
-	public double getCash()
-	{
-		return sim.getCash();
-	}
-	
-	public int countProduct(String product)
-	{
-		return sim.countProduct(product);
-	}
-	
-	public int getMaxStorageSize()
-	{
-		return sim.getMaxStorageSize();
-	}
-	
-	public int getMaxDays()
-	{
-		return sim.getMaxDays();
-	}
 	
 	public int getGumSize()
 	{

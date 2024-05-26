@@ -41,5 +41,6 @@ public class ControllerHighscoreMenu extends Controller
     	return this.score.getScore();
     }
     
+    
 }
 

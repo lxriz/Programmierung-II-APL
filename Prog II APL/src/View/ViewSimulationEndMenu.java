@@ -6,16 +6,11 @@ import Controller.Controller;
 import Controller.ControllerSimulationEndMenu;
 import Model.Simulation.Simulation;
 
-public class ViewSimulationEndMenu extends View
+public class ViewSimulationEndMenu extends ViewSimulation
 {	
 	public ViewSimulationEndMenu(Controller controller)
 	{
 		super(controller);
-	}
-	
-	public String formateDouble(double d)
-	{
-		return String.format("%.2f", d);
 	}
 	
 	@Override
@@ -27,9 +22,9 @@ public class ViewSimulationEndMenu extends View
 		System.out.println(" " + controller.getTrans("SIMULATION_END_GAME_GAME_OVER"));
 		System.out.println();
 		PrintLine();
-		System.out.println("  " + controller.getTrans("SIMULATION_END_GAME_PROFIT") + ": " + formateDouble((((ControllerSimulationEndMenu) controller).getCash()-((ControllerSimulationEndMenu) controller).getStartCash())) + "€");
+		System.out.println("  " + controller.getTrans("SIMULATION_END_GAME_PROFIT") + ": " + formateDouble(((ControllerSimulationEndMenu) controller).getProfit()) + "€");
 		PrintLineDotted();
-		System.out.println("  " + controller.getTrans("SIMULATION_END_GAME_PROFIT_PER_DAY") + ": " + formateDouble((((ControllerSimulationEndMenu) controller).getCash()-((ControllerSimulationEndMenu) controller).getStartCash())/((double)((ControllerSimulationEndMenu) controller).getMaxDays())) + "€");
+		System.out.println("  " + controller.getTrans("SIMULATION_END_GAME_PROFIT_PER_DAY") + ": " + formateDouble(((ControllerSimulationEndMenu) controller).getProfitPerDay()) + "€");
 		PrintLine();
 		System.out.println();
 		System.out.println("  " + controller.getTrans("SIMULATION_END_GAME_SAVE_HIGHSCORE"));
@@ -60,6 +55,10 @@ public class ViewSimulationEndMenu extends View
 		
 		if(input >= 1 && input <= 2)
 		{
+			if(input == 1)
+			{
+				((ControllerSimulationEndMenu) controller).addScore();
+			}
 			controller.setInput(input);
 		}
 		else

@@ -24,7 +24,6 @@ public class Gum extends Product
 
     /**
      * Constructs a new Gum object with a specified buy price.
-     * Default values are set for name, expiration days, size, base price, base price variation, and price variation based on weather.
      *
      * @param buyPrice The buy price of the gum.
      */
@@ -34,9 +33,7 @@ public class Gum extends Product
         this.expiresDays = 7;
         this.size = 1;
         this.buyPrice = buyPrice;
-        this.basePrice = 0.40;
-        this.basePriceVariation = 0.25;
-        this.priceWeather = new double[]{0.2, 0, -0.2};
     }
 }
+
 

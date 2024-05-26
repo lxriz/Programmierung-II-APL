@@ -23,7 +23,6 @@ public class Lemonade extends Product
 
     /**
      * Constructs a new Lemonade object with a specified buy price.
-     * Default values are set for name, expiration days, size, base price, base price variation, and price variation based on weather.
      *
      * @param buyPrice The buy price of the lemonade.
      */
@@ -33,9 +32,8 @@ public class Lemonade extends Product
         this.expiresDays = 3;
         this.size = 2;
         this.buyPrice = buyPrice;
-        this.basePrice = 1.25;
-        this.basePriceVariation = 0.24;
-        this.priceWeather = new double[]{0.2, 0, -0.2};
     }
+    
 }
+
 

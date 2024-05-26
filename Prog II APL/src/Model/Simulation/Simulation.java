@@ -146,7 +146,7 @@ public class Simulation
 		this.day = new Day();
 		
 		this.currentDay = 1;
-		this.maxDays = 2;
+		this.maxDays = 1;
 	}
 	
 	

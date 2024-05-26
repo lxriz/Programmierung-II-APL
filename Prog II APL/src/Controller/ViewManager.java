@@ -13,6 +13,7 @@ public class ViewManager
 	private Simulation sim;
 	
 	private int input;
+	private boolean running = true;
 	
 	private ViewName currentView;
 	private enum ViewName
@@ -44,6 +45,7 @@ public class ViewManager
 		currentView = ViewName.MainMenu;
 		this.controller = new ControllerMainMenu(this, trans);
 		this.view = new ViewMainMenu(controller);
+		
 		run();
 	}
 	
@@ -55,29 +57,23 @@ public class ViewManager
 			case MainMenu:
 				switch(input)
 				{
-					case -1:
-						run();
-						break;
 					case 0:
-						// Exits Program
+						this.running = false;
 						break;
 					case 1:
 						currentView = ViewName.EnterUsernameMenu;
 						this.controller = new ControllerEnterUsernameMenu(this, trans);
 						this.view = new ViewEnterUsernameMenu(controller);
-						run();
 						break;
 					case 2:
 						currentView = ViewName.LanguageMenu;
 						this.controller = new ControllerLanguageMenu(this, trans);
 						this.view = new ViewLanguageMenu(controller);
-						run();
 						break;
 					case 3:
 						currentView = ViewName.HighscoreMenu;
 						this.controller = new ControllerHighscoreMenu(this, trans);
 						this.view = new ViewHighscoreMenu(controller);
-						run();
 						break;
 				}
 				break;
@@ -85,14 +81,10 @@ public class ViewManager
 			case LanguageMenu:
 				switch(input)
 				{
-					case -1:
-						run();
-						break;
 					case 0:
 						currentView = ViewName.MainMenu;
 						this.controller = new ControllerMainMenu(this, trans);
 						this.view = new ViewMainMenu(controller);
-						run();
 						break;
 				}
 				break;
@@ -100,14 +92,10 @@ public class ViewManager
 			case HighscoreMenu:
 				switch(input)
 				{
-					case -1:
-						run();
-						break;
 					case 0:
 						currentView = ViewName.MainMenu;
 						this.controller = new ControllerMainMenu(this, trans);
 						this.view = new ViewMainMenu(controller);
-						run();
 						break;
 				}
 				
@@ -116,14 +104,10 @@ public class ViewManager
 			case EnterUsernameMenu:
 				switch(input)
 				{
-					case -1:
-						run();
-						break;
 					default:
 						currentView = ViewName.SimulationMenu;
 						this.controller = new ControllerSimulationMenu(this, trans, sim);
 						this.view = new ViewSimulationMenu(controller);
-						run();
 						break;
 				}
 				break;
@@ -131,35 +115,28 @@ public class ViewManager
 			case SimulationMenu:
 				switch(input)
 				{
-					case -1:
-						run();
-						break;
 					case 0:
 						currentView = ViewName.MainMenu;
 						this.controller = new ControllerMainMenu(this, trans);
 						this.view = new ViewMainMenu(controller);
-						run();
 						break;
 						
 					case 1:
 						currentView = ViewName.SimulationDayMenu;
 						this.controller = new ControllerSimulationDayMenu(this, trans, this.sim);
 						this.view = new ViewSimulationDayMenu(controller);
-						run();
 						break;
 						
 					case 2:
 						currentView = ViewName.SimulationPriceMenu;
 						this.controller = new ControllerSimulationPriceMenu(this, trans, this.sim);
 						this.view = new ViewSimulationPriceMenu(controller);
-						run();
 						break;
 						
 					case 3:
 						currentView = ViewName.SimulationStorageMenu;
 						this.controller = new ControllerSimulationStorageMenu(this, trans, this.sim);
 						this.view = new ViewSimulationStorageMenu(controller);
-						run();
 						break;
 					
 						
@@ -167,7 +144,6 @@ public class ViewManager
 						currentView = ViewName.SimulationMarketMenu;
 						this.controller = new ControllerSimulationMarketMenu(this, trans, this.sim);
 						this.view = new ViewSimulationMarketMenu(controller);
-						run();
 						break;
 				}
 				break;
@@ -175,14 +151,10 @@ public class ViewManager
 			case SimulationPriceMenu:
 				switch(input)
 				{
-					case -1:
-						run();
-						break;
 					case 0:
 						currentView = ViewName.SimulationMenu;
 						this.controller = new ControllerSimulationMenu(this, trans, sim);
 						this.view = new ViewSimulationMenu(controller);
-						run();
 						break;
 				}
 				break;
@@ -190,14 +162,10 @@ public class ViewManager
 			case SimulationMarketMenu:
 				switch(input)
 				{
-					case -1:
-						run();
-						break;
 					case 0:
 						currentView = ViewName.SimulationMenu;
 						this.controller = new ControllerSimulationMenu(this, trans, sim);
 						this.view = new ViewSimulationMenu(controller);
-						run();
 						break;
 				}
 				break;
@@ -205,16 +173,11 @@ public class ViewManager
 			case SimulationStorageMenu:
 				switch(input)
 				{
-					case -1:
-						run();
-						break;
 					case 0:
 						currentView = ViewName.SimulationMenu;
 						this.controller = new ControllerSimulationMenu(this, trans, sim);
 						this.view = new ViewSimulationMenu(controller);
-						run();
 						break;
-				
 				}
 				break;
 				
@@ -234,28 +197,22 @@ public class ViewManager
 					currentView = ViewName.SimulationEndMenu;
 					this.controller = new ControllerSimulationEndMenu(this, trans, sim);
 					this.view = new ViewSimulationEndMenu(controller);
-					run();
-					
+					break;
 					}
 				break;
 				
 			case SimulationEndMenu:
 				switch(input)
 				{
-					case -1:
-						run();
-						break;
 					case 1:
 						currentView = ViewName.HighscoreMenu;
 						this.controller = new ControllerHighscoreMenu(this, trans);
 						this.view = new ViewHighscoreMenu(controller);
-						run();
 						break;
 					case 2:
 						currentView = ViewName.MainMenu;
 						this.controller = new ControllerMainMenu(this, trans);
 						this.view = new ViewMainMenu(controller);
-						run();
 						break;
 				
 				}
@@ -278,7 +235,10 @@ public class ViewManager
 	
 	public void run()
 	{
-		view.print();		
-		changeView(input);
+		while(this.running)
+		{
+			view.print();		
+			changeView(input);
+		}
 	}
 }
