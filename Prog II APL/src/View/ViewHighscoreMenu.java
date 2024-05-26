@@ -3,6 +3,7 @@ package View;
 import java.util.Scanner;
 
 import Controller.Controller;
+import Controller.ControllerHighscoreMenu;
 
 public class ViewHighscoreMenu extends View
 {
@@ -21,7 +22,27 @@ public class ViewHighscoreMenu extends View
 		System.out.println(" " + controller.getTrans("HIGHSCORE_MENU"));
 		PrintLine();
 	
-		System.out.println(" TO DO !!! ");
+		String[][] score = ((ControllerHighscoreMenu) controller).getScore();
+		
+		if(score == null)
+		{
+			System.out.println(" ERROR ");
+		}
+		else
+		{
+			int i = 1;
+			for(String[] entry : score)
+			{
+				if(entry[0] == null)
+				{
+					entry[0] = " - ";
+					entry[1] = " - ";
+				}
+				System.out.println(" " + i + ". | " + entry[1] + " - " + entry[0]);
+				i++;
+			}
+		}
+		
 		
 		System.out.println();
 		System.out.println(" 0| " + controller.getTrans("HIGHSCORE_MENU_EXIT"));	

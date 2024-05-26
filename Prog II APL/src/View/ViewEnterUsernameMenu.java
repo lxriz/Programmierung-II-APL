@@ -3,14 +3,24 @@ package View;
 import java.util.Scanner;
 import Controller.*;
 
+/**
+ * The ViewEnterUsernameMenu class handles the view for entering a username in the simulation.
+ */
 public class ViewEnterUsernameMenu extends View
 {
+	/**
+	 * Instantiates a new ViewEnterUsernameMenu.
+	 *
+	 * @param controller the controller associated with this view
+	 */
 	public ViewEnterUsernameMenu(Controller controller)
 	{
 		super(controller);
 	}
 	
-	
+	/**
+	 * Prints the enter username menu.
+	 */
 	@Override
 	public void print()
 	{
@@ -20,8 +30,9 @@ public class ViewEnterUsernameMenu extends View
 		getInput();
 	}
 	
-
-	
+	/**
+	 * Gets the user's input for the username.
+	 */
 	@Override 
 	public void getInput()
 	{
@@ -38,17 +49,21 @@ public class ViewEnterUsernameMenu extends View
 			scan.nextLine();
 		}
 		
-		
-		if(input.length() > 2 && input.length() < 30)
-		{
-			((ControllerEnterUsernameMenu) controller).setUserName(input);
-			controller.setInput(0);
-		}
-		else
+		if(!(input.length() >= 2 && input.length() <= 15))
 		{
 			PrintInvalidInput();
 			controller.setInput(-1);
 		}
-		
+		else if(!(input.matches("[A-Za-z]+")))
+		{
+			PrintInvalidInput();
+			controller.setInput(-1);
+		}
+		else
+		{
+			((ControllerEnterUsernameMenu) controller).setUserName(input);
+			controller.setInput(0);
+		}
 	}
 }
+

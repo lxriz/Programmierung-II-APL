@@ -5,14 +5,24 @@ import java.util.Scanner;
 import Controller.Controller;
 import Controller.ControllerLanguageMenu;
 
+/**
+ * The ViewLanguageMenu class handles the view for selecting a language in the simulation.
+ */
 public class ViewLanguageMenu extends View
-{	
+{
+	/**
+	 * Instantiates a new ViewLanguageMenu.
+	 *
+	 * @param controller the controller associated with this view
+	 */
 	public ViewLanguageMenu(Controller controller)
 	{
 		super(controller);
 	}
 	
-	
+	/**
+	 * Prints the language selection menu.
+	 */
 	@Override
 	public void print()
 	{
@@ -21,7 +31,6 @@ public class ViewLanguageMenu extends View
 		PrintLine();
 		System.out.println(" " + controller.getTrans("LANGUAGE_MENU"));
 		PrintLine();
-	
 		
 		String[] languages = ((ControllerLanguageMenu) controller).getSupportedLanguages();
 		for(int i = 0; i < languages.length; i++)
@@ -30,15 +39,14 @@ public class ViewLanguageMenu extends View
 		}
 		
 		System.out.println();
-		System.out.println(" 0| " + controller.getTrans("LANGUAGE_MENU_EXIT"));	
-		
-		
+		System.out.println(" 0| " + controller.getTrans("LANGUAGE_MENU_EXIT"));
 		
 		getInput();
 	}
 	
-
-	
+	/**
+	 * Gets the user's input for the language selection.
+	 */
 	@Override 
 	public void getInput()
 	{
@@ -55,8 +63,6 @@ public class ViewLanguageMenu extends View
 			scan.nextLine();
 		}
 		
-		
-		
 		if(input >= 0 && input <= ((ControllerLanguageMenu) controller).getSupportedLanguages().length)
 		{
 			controller.setInput(input);
@@ -65,9 +71,7 @@ public class ViewLanguageMenu extends View
 		{
 			PrintInvalidInput();
 			controller.setInput(-1);
-		} 
-		
-		
+		}
 	}
-	
 }
+

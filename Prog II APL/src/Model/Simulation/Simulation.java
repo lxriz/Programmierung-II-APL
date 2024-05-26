@@ -31,99 +31,104 @@ public class Simulation
 		
 		public int[] nextCustomer()
 		{
-				// Respone - [age, product_id, transaction]
+				// Respone - [product_id, transaction]
 				// 0 - sold out
 				// 1 - too expensive
 				// 2 - bought
 			
 				Customer customer = new Customer(weather);
 				int choice = customer.chooseProcduct();
-				
 				choice++;
-								
-				switch(choice)
+						
+				enum CustomerAction
 				{
-					case 1:
-						if(kiosk.countProduct("PRODUCT_NAME_CIGARETTES") > 0)
-						{
-							if(customer.willBuy(market.cigarettesPrice, kiosk.getPrice(choice)))
-							{
-								kiosk.addCash(kiosk.getPrice(choice));
-								kiosk.removeFromStorage("PRODUCT_NAME_CIGARETTES");
-								return new int[]{customer.age, choice, 2};
-							}
-							return new int[]{customer.age, choice, 1};
-						}
-						return new int[]{customer.age, choice, 0};
-						
-					case 2:
-						if(kiosk.countProduct("PRODUCT_NAME_FRIES") > 0)
-						{
-							if(customer.willBuy(market.friesPrice, kiosk.getPrice(choice)))
-							{
-								kiosk.addCash(kiosk.getPrice(choice));
-								kiosk.removeFromStorage("PRODUCT_NAME_FRIES");
-								return new int[]{customer.age, choice, 2};
-							}
-							return new int[]{customer.age, choice, 1};
-						}	
-						return new int[]{customer.age, choice, 0};
-						
-					case 3:
-						if(kiosk.countProduct("PRODUCT_NAME_GUM") > 0)
-						{
-							if(customer.willBuy(market.gumPrice, kiosk.getPrice(choice)))
-							{
-								kiosk.addCash(kiosk.getPrice(choice));
-								kiosk.removeFromStorage("PRODUCT_NAME_GUM");
-								return new int[]{customer.age, choice, 2};
-							}
-							return new int[]{customer.age, choice, 1};
-						}		
-						return new int[]{customer.age, choice, 0};
-						
-					case 4:
-						if(kiosk.countProduct("PRODUCT_NAME_ICE_CREAM") > 0)
-						{
-							if(customer.willBuy(market.iceCreamPrice, kiosk.getPrice(choice)))
-							{
-								kiosk.addCash(kiosk.getPrice(choice));
-								kiosk.removeFromStorage("PRODUCT_NAME_ICE_CREAM");
-								return new int[]{customer.age, choice, 2};
-							}
-							return new int[]{customer.age, choice, 1};
-						}
-						return new int[]{customer.age, choice, 0};
-						
-					case 5:
-						if(kiosk.countProduct("PRODUCT_NAME_LEMONADE") > 0)
-						{
-							if(customer.willBuy(market.lemonadePrice, kiosk.getPrice(choice)))
-							{
-								kiosk.addCash(kiosk.getPrice(choice));
-								kiosk.removeFromStorage("PRODUCT_NAME_LEMONADE");
-								return new int[]{customer.age, choice, 2};
-							}
-							return new int[]{customer.age, choice, 1};
-						}
-						return new int[]{customer.age, choice, 0};
-						
-					case 6:
-						if(kiosk.countProduct("PRODUCT_NAME_NEWSPAPER") > 0)
-						{
-							if(customer.willBuy(market.newspaperPrice, kiosk.getPrice(choice)))
-							{
-								kiosk.addCash(kiosk.getPrice(choice));
-								kiosk.removeFromStorage("PRODUCT_NAME_NEWSPAPER");
-								return new int[]{customer.age, choice, 2};
-							}
-							return new int[]{customer.age, choice, 1};
-						}
-						return new int[]{customer.age, choice, 0};
+					NotInStock,
+					TooExpensive,
+					Bought
 				}
 				
-			
-			return new int[]{customer.age, 0, -1};
+				switch(choice)
+				{
+				case 1:
+					if(kiosk.countProduct("PRODUCT_NAME_CIGARETTES") > 0)
+					{
+						if(customer.willBuy(market.cigarettesPrice, kiosk.getPrice(choice)))
+						{
+							kiosk.addCash(kiosk.getPrice(choice));
+							kiosk.removeFromStorage("PRODUCT_NAME_CIGARETTES");
+							return new int[]{choice, CustomerAction.Bought.ordinal()};
+						}
+						return new int[]{choice, CustomerAction.TooExpensive.ordinal()};
+					}
+					return new int[]{choice, CustomerAction.NotInStock.ordinal()};
+					
+				case 2:
+					if(kiosk.countProduct("PRODUCT_NAME_FRIES") > 0)
+					{
+						if(customer.willBuy(market.friesPrice, kiosk.getPrice(choice)))
+						{
+							kiosk.addCash(kiosk.getPrice(choice));
+							kiosk.removeFromStorage("PRODUCT_NAME_FRIES");
+							return new int[]{choice, CustomerAction.Bought.ordinal()};
+						}
+						return new int[]{choice, CustomerAction.TooExpensive.ordinal()};
+					}	
+					return new int[]{choice, CustomerAction.NotInStock.ordinal()};
+					
+				case 3:
+					if(kiosk.countProduct("PRODUCT_NAME_GUM") > 0)
+					{
+						if(customer.willBuy(market.gumPrice, kiosk.getPrice(choice)))
+						{
+							kiosk.addCash(kiosk.getPrice(choice));
+							kiosk.removeFromStorage("PRODUCT_NAME_GUM");
+							return new int[]{choice, CustomerAction.Bought.ordinal()};
+						}
+						return new int[]{choice, CustomerAction.TooExpensive.ordinal()};
+					}		
+					return new int[]{choice, CustomerAction.NotInStock.ordinal()};
+					
+				case 4:
+					if(kiosk.countProduct("PRODUCT_NAME_ICE_CREAM") > 0)
+					{
+						if(customer.willBuy(market.iceCreamPrice, kiosk.getPrice(choice)))
+						{
+							kiosk.addCash(kiosk.getPrice(choice));
+							kiosk.removeFromStorage("PRODUCT_NAME_ICE_CREAM");
+							return new int[]{choice, CustomerAction.Bought.ordinal()};
+						}
+						return new int[]{choice, CustomerAction.TooExpensive.ordinal()};
+					}
+					return new int[]{choice, CustomerAction.NotInStock.ordinal()};
+					
+				case 5:
+					if(kiosk.countProduct("PRODUCT_NAME_LEMONADE") > 0)
+					{
+						if(customer.willBuy(market.lemonadePrice, kiosk.getPrice(choice)))
+						{
+							kiosk.addCash(kiosk.getPrice(choice));
+							kiosk.removeFromStorage("PRODUCT_NAME_LEMONADE");
+							return new int[]{choice, CustomerAction.Bought.ordinal()};
+						}
+						return new int[]{choice, CustomerAction.TooExpensive.ordinal()};
+					}
+					return new int[]{choice, CustomerAction.NotInStock.ordinal()};
+					
+				case 6:
+					if(kiosk.countProduct("PRODUCT_NAME_NEWSPAPER") > 0)
+					{
+						if(customer.willBuy(market.newspaperPrice, kiosk.getPrice(choice)))
+						{
+							kiosk.addCash(kiosk.getPrice(choice));
+							kiosk.removeFromStorage("PRODUCT_NAME_NEWSPAPER");
+							return new int[]{choice, CustomerAction.Bought.ordinal()};
+						}
+						return new int[]{choice, CustomerAction.TooExpensive.ordinal()};
+					}
+					return new int[]{choice, CustomerAction.NotInStock.ordinal()};
+				}
+				
+			return new int[]{-1, -1};
 		}
 	}
 	

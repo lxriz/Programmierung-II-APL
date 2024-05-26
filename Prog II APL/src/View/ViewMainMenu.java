@@ -5,14 +5,24 @@ import java.util.Scanner;
 import Controller.Controller;
 
 
+/**
+ * The ViewMainMenu class handles the main menu view of the simulation.
+ */
 public class ViewMainMenu extends View
 {
+	/**
+	 * Instantiates a new ViewMainMenu.
+	 *
+	 * @param controller the controller associated with this view
+	 */
 	public ViewMainMenu(Controller controller)
 	{
 		super(controller);
 	}
 	
-	
+	/**
+	 * Prints the main menu.
+	 */
 	@Override
 	public void print()
 	{
@@ -31,8 +41,9 @@ public class ViewMainMenu extends View
 		getInput();
 	}
 	
-	
-	
+	/**
+	 * Gets the user's input for the main menu.
+	 */
 	@Override 
 	public void getInput()
 	{
@@ -49,8 +60,6 @@ public class ViewMainMenu extends View
 			scan.nextLine();
 		}
 		
-		
-		
 		if(input >= 0 && input <= 3)
 		{
 			controller.setInput(input);
@@ -60,6 +69,6 @@ public class ViewMainMenu extends View
 			PrintInvalidInput();
 			controller.setInput(-1);
 		} 
-		
 	}
 }
+
