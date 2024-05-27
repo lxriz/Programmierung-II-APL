@@ -7,7 +7,6 @@ import Model.Simulation.Market;
 
 public class JUnitTest 
 {
-	
 	@Test
 	public void testEnglishTranslation()
 	{
