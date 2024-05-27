@@ -35,6 +35,17 @@ public class ViewSimulationMenu extends ViewSimulation
 	}
 	
 	
+	private void printVerify()
+	{
+		PrintClearConsole();
+		System.out.println(" " + controller.getTrans("SIMULATION_MENU_END_GAME_VERIFY"));
+		System.out.println();
+
+		System.out.println(" 1| " + controller.getTrans("SIMULATION_MENU_END_GAME_VERIFY_STAY"));
+		System.out.println(" 2| " + controller.getTrans("SIMULATION_MENU_END_GAME_VERIFY_LEAVE"));
+	}
+	
+	
 	@Override
 	public void getInput()
 	{	
@@ -51,8 +62,35 @@ public class ViewSimulationMenu extends ViewSimulation
 			scan.nextLine();
 		}
 	
-		
-		if(input >= 0 && input <= 4)
+		if(input == 0)
+		{
+			input = -1;
+			try
+			{
+				printVerify();
+				PrintInput();
+				input = scan.nextInt();
+			}
+			catch(Exception e)
+			{
+				
+			}
+			
+			if(input == 1)
+			{
+				controller.setInput(-1);
+			}
+			else if(input == 2)
+			{
+				controller.setInput(0);
+			}
+			else
+			{
+				PrintInvalidInput();
+				controller.setInput(-1);
+			}
+		}	
+		else if(input >= 1 && input <= 4)
 		{
 			controller.setInput(input);
 		}
