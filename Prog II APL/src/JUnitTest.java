@@ -3,7 +3,6 @@ import org.junit.jupiter.api.Test;
 import Model.Translation;
 import Model.Simulation.Kiosk;
 import Model.Simulation.Market;
-import Model.Simulation.Simulation;
 
 
 public class JUnitTest 

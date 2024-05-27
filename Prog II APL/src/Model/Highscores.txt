@@ -1,5 +1,3 @@
-Peter;13.45
-Susanne;9.45
-Chris;3.22
-Lui;0.22
-Penis;-16.84
+Penis;3.14
+Luise;-0.36
+Hitler;-22.92
