@@ -53,10 +53,10 @@ public class ViewHighscoreMenu extends View
             {
                 if(entry[0] == null)
                 {
-                    entry[0] = " - ";
-                    entry[1] = " - ";
+                    entry[0] = " ... ";
+                    entry[1] = " ... ";
                 }
-                System.out.println(" " + i + ". | " + entry[1] + " : " + entry[0]);
+                System.out.println(" " + i + ". | " + entry[1] + "€ :\t" + entry[0]);
                 i++;
             }
         }

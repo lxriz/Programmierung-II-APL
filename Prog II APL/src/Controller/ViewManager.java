@@ -104,7 +104,7 @@ public class ViewManager
 			case EnterUsernameMenu:
 				switch(input)
 				{
-					default:
+					case 0:
 						currentView = ViewName.SimulationMenu;
 						this.controller = new ControllerSimulationMenu(this, trans, sim);
 						this.view = new ViewSimulationMenu(controller);

@@ -25,7 +25,7 @@ public class Simulation
 		{
 			this.weather = (int)(r.nextInt(3));
 			market = new Market(this.weather);
-			countCustomers = r.nextInt(15, (int)(35+35*0.15*weather));
+			countCustomers = r.nextInt(20, (int)(40+10*weather));
 		}
 		
 		
@@ -146,7 +146,7 @@ public class Simulation
 		this.day = new Day();
 		
 		this.currentDay = 1;
-		this.maxDays = 1;
+		this.maxDays = 14;
 	}
 	
 	

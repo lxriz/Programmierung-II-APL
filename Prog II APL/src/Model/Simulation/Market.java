@@ -46,7 +46,7 @@ public class Market
      * @param variation the weather variation
      * @return the price adjusted for weather
      */
-    private double calculatePriceWeather(double base, double variation) 
+    public double calculatePriceWeather(double base, double variation) 
     {
         return base + base * variation;
     }
@@ -79,7 +79,7 @@ public class Market
      * @param price the price to be rounded
      * @return the rounded price
      */
-    private double roundPrice(double price) 
+    public double roundPrice(double price) 
     {
         return Math.round(price * 100) / 100.0;
     }

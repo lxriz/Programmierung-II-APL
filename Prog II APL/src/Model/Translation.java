@@ -24,8 +24,7 @@ public final class Translation {
     private String defaultLanguage = "ENG";
 
     /** The path to the translation file. */
-    // WARNING NOT YET DYNAMIC !!!
-    private final String path = "/Users/loris/git/Prog II APL/Prog II APL/src/Model/translation.json";
+    private final String path = "src/Model/translation.json";
 
     /**
      * Reads the translation file.

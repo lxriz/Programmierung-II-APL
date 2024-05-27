@@ -33,7 +33,7 @@ public class Customer
                 demand = new double[]{0.20, 0.10, 0.10, 0.05, 0.10, 0.45};
                 break;
             case 1:     // Cloudy
-                demand = new double[]{0.15, 0.15, 0.15, 0.10, 0.15, 0.30};
+                demand = new double[]{0.15, 0.15, 0.10, 0.10, 0.15, 0.35};
                 break;
             case 2:     // Sunny
                 demand = new double[]{0.10, 0.10, 0.10, 0.30, 0.25, 0.15};
@@ -70,7 +70,7 @@ public class Customer
      */
     private double priceAcceptance(double x) 
     {
-        return -0.000210084 * x * x + 0.0205882353 * x + 0.7474789916;
+        return -0.001086*x*x+0.095371*x-0.264914;
     }
     
     /**
