@@ -208,10 +208,6 @@ public class Kiosk
      * Ages the products in the kiosk's storage by decrementing their expiration days.
      * Removes expired products from the storage.
      */
-    /**
-     * Ages the products in the kiosk's storage by decrementing their expiration days.
-     * Removes expired products from the storage.
-     */
     public void ageStorage() 
     {
         for (int i = 0; i < storage.size(); i++) 
