@@ -19,7 +19,6 @@ public class ViewSimulationDayMenu extends ViewSimulation
         super(controller);
     }
 
-
     /**
      * Helper method to get the customer response based on the response code.
      *
@@ -43,8 +42,9 @@ public class ViewSimulationDayMenu extends ViewSimulation
         return "";
     }
 
-    
-	
+    /**
+     * Prints the simulation day menu including customer responses.
+     */
     public void print()
     {
         // Get the response from the controller
@@ -96,17 +96,18 @@ public class ViewSimulationDayMenu extends ViewSimulation
         }
         catch(Exception e)
         {
-            
+            // Handle exception
         }
 
         getInput();
     }
 
-
+    /**
+     * Gets input for the next action in the simulation.
+     */
     @Override
     public void getInput()
     {
         controller.setInput(-1);
     }
-
 }
