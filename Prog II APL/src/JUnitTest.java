@@ -41,7 +41,7 @@ public class JUnitTest
     {
         Market market = new Market(0);
         Double test = market.roundPrice(5.599);
-        assertEquals(5.60, test, 0.001); // Adding delta for floating-point comparison
+        assertEquals(5.60, test); 
     }
 
     /**
@@ -52,7 +52,7 @@ public class JUnitTest
     {
         Market market = new Market(0);
         Double test = market.calculatePriceWeather(5.00, 0.5);
-        assertEquals(7.50, test, 0.001); // Adding delta for floating-point comparison
+        assertEquals(7.50, test); 
     }
 
     /**
@@ -63,7 +63,7 @@ public class JUnitTest
     {
         Kiosk kiosk = new Kiosk("Test");
         Boolean test = kiosk.canPay(1000);
-        assertTrue(test); // Using assertFalse for boolean comparison
+        assertTrue(test); 
     }
 
     /**
@@ -75,7 +75,7 @@ public class JUnitTest
         Kiosk kiosk = new Kiosk("Test");
         kiosk.addCash(100);
         double test = kiosk.getCash();
-        assertEquals(kiosk.startCash + 100, test, 0.001); // Adding delta for floating-point comparison
+        assertEquals(kiosk.startCash + 100, test); 
     }
 }
 
