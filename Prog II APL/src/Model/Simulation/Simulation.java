@@ -28,7 +28,7 @@ public class Simulation
         {
             this.weather = (int)(r.nextInt(3));
             market = new Market(this.weather);
-            countCustomers = r.nextInt(20, (int)(40+10*weather));
+            countCustomers = r.nextInt(20+10*weather, (int)(40+10*weather));
         }
 
         /**

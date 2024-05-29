@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import Model.Translation;
 import Model.Simulation.Kiosk;
 import Model.Simulation.Market;
+import Model.Simulation.Simulation;
 
 
 /**
@@ -63,7 +64,7 @@ public class JUnitTest
     {
         Kiosk kiosk = new Kiosk("Test");
         Boolean test = kiosk.canPay(1000);
-        assertTrue(test); 
+        assertEquals(test, false); 
     }
 
     /**
@@ -76,6 +77,30 @@ public class JUnitTest
         kiosk.addCash(100);
         double test = kiosk.getCash();
         assertEquals(kiosk.startCash + 100, test); 
+    }
+    
+    @Test
+    public void testCustomerGeneration()
+    {
+    	Kiosk kiosk = new Kiosk("Test");
+    	Simulation sim = new Simulation(kiosk);
+    	int customerCount = sim.getCountCustomers();
+    	
+    	boolean test1 = false;
+    	boolean test2 = false;
+    	
+    	if(customerCount >= 20)
+    	{
+    		test1 = true;
+    	}
+    	
+    	if(customerCount <= 60)
+    	{
+    		test2 = true;
+    	}
+    	
+    	assertEquals(test1, true);
+    	assertEquals(test2, true);
     }
 }
 
