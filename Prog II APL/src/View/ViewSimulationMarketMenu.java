@@ -127,6 +127,7 @@ public class ViewSimulationMarketMenu extends ViewSimulation
         }
         else if(input >= 1 && input <= 6)
         {
+        	scan.nextLine();
             PrintGetAmount();
             
             int amount = -1;
