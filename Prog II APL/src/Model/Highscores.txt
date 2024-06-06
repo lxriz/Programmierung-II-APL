@@ -1,0 +1,2 @@
+Sebastian;12,91
+Anede;7,31
