@@ -4,7 +4,7 @@ import Model.Translation;
 import Model.Simulation.Kiosk;
 import Model.Simulation.Market;
 import Model.Simulation.Simulation;
-
+import Model.Simulation.Products.*;
 
 /**
  * JUnit tests for the Kiosk simulation.
@@ -101,5 +101,18 @@ public class JUnitTest
     	assertEquals(test1, true);
     	assertEquals(test2, true);
     }
+    
+    /*
+    @Test
+    // Tests the toString() method of data classes
+    public void testToString()
+    {
+    	Newspaper newspaper = new Newspaper();
+    	System.out.println(newspaper.toString());
+    	newspaper = new Newspaper(0);
+    	System.out.println(newspaper.toString());
+    	assertEquals(true, true);
+    }
+    */
 }
 

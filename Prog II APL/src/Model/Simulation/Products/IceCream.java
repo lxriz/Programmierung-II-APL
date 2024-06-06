@@ -14,6 +14,7 @@ public class IceCream extends Product
     public IceCream()
     {
         this.name = "PRODUCT_NAME_ICE_CREAM";
+        this.className = "IceCream";
         this.expiresDays = 2;
         this.size = 2;
         this.basePrice = 1.00;
@@ -29,6 +30,7 @@ public class IceCream extends Product
     public IceCream(double buyPrice)
     {
         this.name = "PRODUCT_NAME_ICE_CREAM";
+        this.className = "IceCream";
         this.expiresDays = 2;
         this.size = 2;
         this.buyPrice = buyPrice;

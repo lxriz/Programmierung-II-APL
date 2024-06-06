@@ -14,6 +14,7 @@ public class Lemonade extends Product
     public Lemonade()
     {
         this.name = "PRODUCT_NAME_LEMONADE";
+        this.className = "Lemonade";
         this.expiresDays = 3;
         this.size = 2;
         this.basePrice = 1.25;
@@ -29,6 +30,7 @@ public class Lemonade extends Product
     public Lemonade(double buyPrice) 
     {
         this.name = "PRODUCT_NAME_LEMONADE";
+        this.className = "Lemonade";
         this.expiresDays = 3;
         this.size = 2;
         this.buyPrice = buyPrice;

@@ -14,6 +14,7 @@ public class Gum extends Product
     public Gum() 
     {
         this.name = "PRODUCT_NAME_GUM";
+        this.className = "Gum";
         this.expiresDays = 7;
         this.size = 1;
         this.buyPrice = 0;
@@ -30,6 +31,7 @@ public class Gum extends Product
     public Gum(double buyPrice) 
     {
         this.name = "PRODUCT_NAME_GUM";
+        this.className = "Gum";
         this.expiresDays = 7;
         this.size = 1;
         this.buyPrice = buyPrice;

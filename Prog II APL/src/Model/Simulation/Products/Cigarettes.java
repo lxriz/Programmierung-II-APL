@@ -14,6 +14,7 @@ public class Cigarettes extends Product
 	public Cigarettes() 
 	{
 	    this.name = "PRODUCT_NAME_CIGARETTES";
+	    this.className = "Cigarettes";
 	    this.expiresDays = 7;
 	    this.size = 4;
 	    this.basePrice = 6.50;
@@ -29,6 +30,7 @@ public class Cigarettes extends Product
 	public Cigarettes(double buyPrice)
 	{
 	    this.name = "PRODUCT_NAME_CIGARETTES";
+	    this.className = "Cigarettes";
 	    this.expiresDays = 7;
 	    this.size = 4;
 	    this.buyPrice = buyPrice;

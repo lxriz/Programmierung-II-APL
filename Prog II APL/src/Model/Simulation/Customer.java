@@ -28,6 +28,14 @@ public class Customer
     {
         this.age = r.nextInt(18, 81);
         
+        // The array hold the probabilities of a customer choosing a product
+        // The sum must be 1
+        // Cigarettes
+        // Fries
+        // Gum
+        // IceCream
+        // Lemonade
+        // Newspaper
         switch (weather) {
             case 0:     // Rainy
                 demand = new double[]{0.20, 0.10, 0.10, 0.05, 0.10, 0.45};

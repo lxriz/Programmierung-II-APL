@@ -5,8 +5,12 @@ package Model.Simulation.Products;
  * Provides attributes and methods common to all products.
  */
 public abstract class Product 
-{
-
+{	
+	/**
+	 * Saves the class name
+	 */
+	public String className;
+	
     /**
      * Saves the days until the product expires.
      * - expiresDays > 0: Good to sell.
@@ -62,29 +66,37 @@ public abstract class Product
 
         return true;
     }
-
+    
+    
     /**
      * Converts the product data to a string format.
      *
      * @return A string representation of the product's data.
      */
-    public String dataToString() 
+    @Override
+    public String toString() 
     {
         String priceWeather = "[";
-        for (int i = 0; i < this.priceWeather.length; i++) {
-            if (i != 0) {
-                priceWeather += ", ";
-            }
-            priceWeather += this.priceWeather[i];
+        if(this.priceWeather != null)
+	        {
+	        for (int i = 0; i < this.priceWeather.length; i++) {
+	            if (i != 0) {
+	                priceWeather += ", ";
+	            }
+	            priceWeather += this.priceWeather[i];
+	        }
         }
-
-        return "{" +
-                "name='" + this.name + "'" +
-                "size=" + this.size +
-                "expiresDay=" + this.expiresDays +
-                "buyPrice=" + this.buyPrice +
-                "basePrice=" + this.basePrice +
-                "basePriceVaritaion=" + this.basePriceVariation +
+        priceWeather += "]";
+        
+        
+        return 	this.className + 
+        		"{" +
+                "name='" + this.name + "'" + "," +
+                "size=" + this.size + "," +
+                "expiresDay=" + this.expiresDays + "," +
+                "buyPrice=" + this.buyPrice + "," +
+                "basePrice=" + this.basePrice + "," +
+                "basePriceVaritaion=" + this.basePriceVariation + "," +
                 "priceWeather=" + priceWeather +
                 "}";
     }
