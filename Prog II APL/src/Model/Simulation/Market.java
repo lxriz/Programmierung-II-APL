@@ -65,6 +65,8 @@ public class Market
         lemonade = new Lemonade();
         newspaper = new Newspaper();
         
+        // The price for each products is calculated here
+        // Price has a random variation + variation based on weather
         cigarettesPrice = roundPrice(calculatePriceVariation(calculatePriceWeather(cigarettes.basePrice, cigarettes.priceWeather[weather]), cigarettes.basePriceVariation));
         friesPrice = roundPrice(calculatePriceVariation(calculatePriceWeather(fries.basePrice, fries.priceWeather[weather]), fries.basePriceVariation));
         gumPrice = roundPrice(calculatePriceVariation(calculatePriceWeather(gum.basePrice, gum.priceWeather[weather]), gum.basePriceVariation));
