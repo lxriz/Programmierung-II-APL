@@ -1,2 +1,3 @@
-Sebastian;12,91
-Anede;7,31
+Martin;102.90
+Loris;87.23
+Natalie;66.09
