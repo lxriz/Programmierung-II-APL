@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.Random;
 import Model.Simulation.Products.*;
 
-
+/**
+ * The Simulation class represents a simulation of a market kiosk.
+ * It manages the weather, customer count, and market conditions.
+ */
 public class Simulation 
 {
     /**
@@ -16,10 +19,26 @@ public class Simulation
         // 0 - Rainy
         // 1 - Cloudy
         // 2 - Sunny
-        public final int weather;
-        public Market market;
-        public final int countCustomers;
-        private static Random r = new Random();
+    	/**
+    	 * The weather condition affecting the market operations.
+    	 */
+    	public final int weather; 
+
+    	/**
+    	 * The market instance associated with this context.
+    	 */
+    	public Market market; 
+
+    	/**
+    	 * The total number of customers in the market.
+    	 */
+    	public final int countCustomers; 
+
+    	/**
+    	 * A Random instance used for generating random values.
+    	 */
+    	private static Random r = new Random();
+
 
         /**
          * Constructs a new Day with random weather and customer count based on the weather.
@@ -143,9 +162,24 @@ public class Simulation
         }
     }
     
+    /**
+     * Saves the current day.
+     */
     private int currentDay; 
+    
+    /**
+     * Saves the max days until the simulation is over.
+     */
     public final int maxDays;
+    
+    /**
+     * Saves the kiosk instance.
+     */
     public Kiosk kiosk; 
+    
+    /**
+     * Saves the day instance. 
+     */
     public Day day;
     
     /**

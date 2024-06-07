@@ -17,9 +17,8 @@ public class Gum extends Product
         this.className = "Gum";
         this.expiresDays = 7;
         this.size = 1;
-        this.buyPrice = 0;
         this.basePrice = 0.40;
-        this.basePriceVariation = 0.25;
+        this.basePriceVariation = 0.17;
         this.priceWeather = new double[]{0, 0, 0};
     }
 

@@ -19,7 +19,7 @@ public class IceCream extends Product
         this.size = 2;
         this.basePrice = 1.00;
         this.basePriceVariation = 0.12;
-        this.priceWeather = new double[]{-0.2, 0, 0.2};
+        this.priceWeather = new double[]{-0.3, -0.1, 0.25};
     }
 
     /**

@@ -18,9 +18,8 @@ public class Fries extends Product
 		this.expiresDays = 4;
 		this.size = 5;
 		this.basePrice = 2.50;
-		this.basePriceVariation = 0.24;
-		this.priceWeather = new double[]{0.2, 0, -0.2};
-		this.buyPrice = 0;
+		this.basePriceVariation = 0.14;
+		this.priceWeather = new double[]{0.2, 0.05, -0.15};
 	}
 	
 	/**

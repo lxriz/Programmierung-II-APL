@@ -36,11 +36,14 @@ public class ControllerHighscoreMenu extends Controller
         vm.setInput(input);
     }
     
+    /**
+     * Returns the score array. 
+     * @return A 2D String array containing the scores with the names.  
+     */
     public String[][] getScore()
     {
     	return this.score.getScore();
     }
-    
-    
+   
 }
 

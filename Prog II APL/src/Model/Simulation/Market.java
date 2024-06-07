@@ -9,21 +9,27 @@ import Model.Simulation.Products.*;
 public class Market 
 {
     
-    /** The resulting prices for each product. */
-    public final double cigarettesPrice;
-    public final double friesPrice;
-    public final double gumPrice;
-    public final double iceCreamPrice;
-    public final double lemonadePrice;
-    public final double newspaperPrice;
+	/** 
+	 * The resulting prices for each product. 
+	 */
+	public final double cigarettesPrice; // The price of the Cigarettes product.
+	public final double friesPrice;      // The price of the Fries product.
+	public final double gumPrice;        // The price of the Gum product.
+	public final double iceCreamPrice;   // The price of the IceCream product.
+	public final double lemonadePrice;   // The price of the Lemonade product.
+	public final double newspaperPrice;  // The price of the Newspaper product.
+
     
-    /** Product objects representing the market's products. */
-    public Cigarettes cigarettes;
-    public Fries fries;
-    public Gum gum;
-    public IceCream iceCream;
-    public Lemonade lemonade;
-    public Newspaper newspaper;
+    /** 
+     * Product objects representing the market's products. 
+     */
+    public Cigarettes cigarettes; // Represents the Cigarettes product.
+    public Fries fries;           // Represents the Fries product.
+    public Gum gum;               // Represents the Gum product.
+    public IceCream iceCream;     // Represents the IceCream product.
+    public Lemonade lemonade;     // Represents the Lemonade product.
+    public Newspaper newspaper;   // Represents the Newspaper product.
+
 
     private Random r = new Random();
 

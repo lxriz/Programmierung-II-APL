@@ -19,7 +19,7 @@ public class Cigarettes extends Product
 	    this.size = 4;
 	    this.basePrice = 6.50;
 	    this.basePriceVariation = 0.08;
-	    this.priceWeather = new double[]{0.2, 0, -0.2};
+	    this.priceWeather = new double[]{0.12, 0.05, -0.1};
 	}
 
 	/**
