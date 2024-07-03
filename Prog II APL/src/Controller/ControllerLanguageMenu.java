@@ -28,7 +28,7 @@ public class ControllerLanguageMenu extends Controller
     @Override
     public void setInput(int input) 
     {
-        if (input == 0) 
+        if (input == 0 || input == -1) 
         {
             vm.setInput(input);
         } 
